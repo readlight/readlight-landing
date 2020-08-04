@@ -1,59 +1,40 @@
+import * as React from 'react';
+import { ServerStyleSheet } from 'styled-components';
 import Document, {
+  Head,
   Main,
   NextScript,
-  Html,
   DocumentContext,
 } from 'next/document';
-import { ServerStyleSheet, injectGlobal } from 'styled-components';
 
-injectGlobal`
- html {
-   font-size: 10px;
- }
- body {
-   font-family: "Merriweather", serif;
-   font-size: 1.6em;
-   line-height: 1.6;
- }
-`;
+type DocumentProps = {
+  styleTags: Array<React.ReactElement<{}>>;
+};
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+export default class CustomDocument extends Document<DocumentProps> {
+  static async getInitialProps({ renderPage }: DocumentContext) {
     const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        });
 
-      const initialProps = await Document.getInitialProps(ctx);
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      };
-    } finally {
-      sheet.seal();
-    }
+    const page = renderPage((App) => (props) =>
+      sheet.collectStyles(<App {...props} />)
+    );
+
+    const styleTags = sheet.getStyleElement();
+    return { ...page, styleTags };
   }
 
-  render() {
+  public render() {
+    const { styleTags } = this.props;
     return (
-      <Html lang="kr">
-        <head>
-          <style />
-        </head>
+      <html>
+        <Head>{styleTags}</Head>
         <body>
-          <Main />
+          <div className="root">
+            <Main />
+          </div>
           <NextScript />
         </body>
-      </Html>
+      </html>
     );
   }
 }
