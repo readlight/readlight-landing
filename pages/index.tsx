@@ -7,6 +7,7 @@ import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
 import ContentHeader from '../components/molecule/ContentHeader';
+import LargeActionButton from '../components/atom/LargeActionButton';
 
 // color: ${({ theme }) => theme.colors.primary};
 
@@ -24,7 +25,11 @@ export default function Home() {
         desktopHeight={'100vh'}
         mobileHeight={'100vh'}
       >
-        <span>hi</span>
+        <WidthAdjust>
+          <ContentBox>
+            <LargeActionButton buttonText={'펀딩하기'} />
+          </ContentBox>
+        </WidthAdjust>
       </Layout>
 
       <Layout

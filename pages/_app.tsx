@@ -15,6 +15,7 @@ const theme = {
     subHeader: '#C6C6C6',
     lightGray: '#F7F8FA',
     pureWhite: '#FFFFFF',
+    pointBlue: '#0E62FF',
   },
 };
 
