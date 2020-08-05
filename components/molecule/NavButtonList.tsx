@@ -9,6 +9,10 @@ const NavListWrapper = styled.div`
   overflow: hidden;
   text-align: right;
   box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
 `;
 
 const NavButtonList = () => (
@@ -20,4 +24,4 @@ const NavButtonList = () => (
   </NavListWrapper>
 );
 
-export default Navbar;
+export default NavButtonList;

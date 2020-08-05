@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import NavButtonList from '../molecule/NavbuttonList';
+import NavButtonList from '../molecule/NavButtonList';
 
 type Props = {
   children: React.ReactNode;

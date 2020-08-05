@@ -15,9 +15,9 @@ const ButtonExpandArea = styled.div`
 const ActionButton = styled.button`
   color: ${({ theme }) => theme.colors.pureWhite};
   background-color: ${({ theme }) => theme.colors.pointBlue};
-  font-size: 19px;
+  font-size: 17px;
   font-weight: bold;
-  padding: 9px 18px;
+  padding: 6px 15px;
   border: 0px solid;
   border-radius: 5px;
   outline: none;
@@ -41,7 +41,7 @@ const LargeActionButton: React.FC<Props> = ({ buttonText }) => {
         <Emoji
           symbol="🙌"
           label="sheep"
-          paddingLeft={'10px'}
+          paddingLeft={'6px'}
           paddingRight={'0'}
           emojiSize={'20px'}
         />

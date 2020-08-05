@@ -8,15 +8,15 @@ const ButtonClickArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: min-content;
   height: 60px;
 `;
 
 const NavText = styled.span`
   color: ${({ theme }) => theme.colors.pureBlack};
-  font-size: 19px;
+  font-size: 16px;
   font-weight: normal;
   padding: 5px 0px;
+  margin: 0px 15px;
 
   &:hover {
     cursor: pointer;
