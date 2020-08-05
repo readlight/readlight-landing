@@ -15,14 +15,30 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout isBackgroundGray={false}>
+      <Layout
+        isBackgroundGray={false}
+        desktopHeight={'101vh'}
+        mobileHeight={'101vh'}
+      >
         <span>hi</span>
       </Layout>
-      <Layout isBackgroundGray={true}>
+      <Layout
+        isBackgroundGray={true}
+        desktopHeight={'920px'}
+        mobileHeight={'350px'}
+      >
         <DoubleLineHeader
           firstLine={'한권을 읽더라도'}
           secondLine={'좋은책을 읽도록'}
         />
+      </Layout>
+
+      <Layout
+        isBackgroundGray={false}
+        desktopHeight={'100vh'}
+        mobileHeight={'100vh'}
+      >
+        <DoubleLineHeader firstLine={'두번째'} secondLine={'테스트'} />
       </Layout>
     </div>
   );
