@@ -12,14 +12,19 @@ type DoubleLineHeaderStyle = {
 
 const DoubleLineHeaderStyle = styled.h1`
   color: ${({ theme }) => theme.colors.header};
-  @media (max-width: 768px) {
-    color: red;
-  }
+
   opacity: ${(props) => (props.visible ? '1' : '0.3')};
   transform: ${(props) =>
-    props.visible ? 'translateY(20px)' : 'translate(0px)'};
+    props.visible ? 'translateY(30px)' : 'translate(0px)'};
+  -webkit-transform: ${(props) =>
+    props.visible ? 'translateY(30px)' : 'translate(0px)'};
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0, 0, 0.2, 1) 0.0001s,
+    opacity 0.7s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
   transition: transform 0.7s cubic-bezier(0, 0, 0.2, 1) 0.0001s,
     opacity 0.7s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
+
+  @media (max-width: 768px) {
+  }
 `;
 
 const DoubleLineHeader: React.FC<Props> = ({ firstLine, secondLine }) => {
