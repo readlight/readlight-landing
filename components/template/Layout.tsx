@@ -17,6 +17,8 @@ type HeightHandlerProps = {
 const HeightHandler = styled.div<HeightHandlerProps>`
   color: ${({ theme }) => theme.colors.header};
   height: ${(props) => props.desktopHeight};
+  box-sizing: border-box;
+  display: box;
   background-color: ${(props) =>
     props.isBackgroundGray
       ? ({ theme }) => theme.colors.lightGray

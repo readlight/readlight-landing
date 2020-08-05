@@ -1,8 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import SubSingleHeader from '../components/atom/SubSingleHeader';
 import DoubleLineHeader from '../components/atom/DoubleLineHeader';
 import { DocumentContext } from 'next/dist/next-server/lib/document-context';
 import Layout from '../components/template/Layout';
+import WidthAdjust from '../components/template/WidthAdjust';
+import ContentBox from '../components/template/ContentBox';
+import ContentHeader from '../components/molecule/ContentHeader';
 
 // color: ${({ theme }) => theme.colors.primary};
 
@@ -17,20 +21,26 @@ export default function Home() {
 
       <Layout
         isBackgroundGray={false}
-        desktopHeight={'101vh'}
-        mobileHeight={'101vh'}
+        desktopHeight={'100vh'}
+        mobileHeight={'100vh'}
       >
         <span>hi</span>
       </Layout>
+
       <Layout
         isBackgroundGray={true}
         desktopHeight={'920px'}
         mobileHeight={'350px'}
       >
-        <DoubleLineHeader
-          firstLine={'한권을 읽더라도'}
-          secondLine={'좋은책을 읽도록'}
-        />
+        <WidthAdjust>
+          <ContentBox>
+            <ContentHeader
+              firstLine={'한권을 읽더라도'}
+              secondLine={'좋은책을 읽도록'}
+              subText={'데일리 피드'}
+            />
+          </ContentBox>
+        </WidthAdjust>
       </Layout>
 
       <Layout
@@ -38,7 +48,12 @@ export default function Home() {
         desktopHeight={'100vh'}
         mobileHeight={'100vh'}
       >
-        <DoubleLineHeader firstLine={'두번째'} secondLine={'테스트'} />
+        <WidthAdjust>
+          <ContentBox>
+            <SubSingleHeader subText={'반가워요'} />
+            <DoubleLineHeader firstLine={'두번째'} secondLine={'테스트'} />
+          </ContentBox>
+        </WidthAdjust>
       </Layout>
     </div>
   );

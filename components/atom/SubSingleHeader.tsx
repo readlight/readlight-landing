@@ -3,14 +3,14 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import ScrollTrigger from 'react-scroll-trigger';
 
-type Props = { firstLine: String; secondLine: String };
+type Props = { subText: String };
 
 type DoubleLineHeaderStyle = {
   visible: boolean;
 };
 
-const DoubleLineHeaderStyle = styled.h1`
-  color: ${({ theme }) => theme.colors.header};
+const SubSingleHeaderStyle = styled.h2`
+  color: ${({ theme }) => theme.colors.subHeader};
 
   opacity: ${(props) => (props.visible ? '1' : '0.3')};
   transform: ${(props) =>
@@ -26,7 +26,7 @@ const DoubleLineHeaderStyle = styled.h1`
   }
 `;
 
-const DoubleLineHeader: React.FC<Props> = ({ firstLine, secondLine }) => {
+const DoubleLineHeader: React.FC<Props> = ({ subText }) => {
   const [visible, setVisible] = useState(false);
 
   const onEnterViewport = () => {
@@ -39,11 +39,7 @@ const DoubleLineHeader: React.FC<Props> = ({ firstLine, secondLine }) => {
 
   return (
     <ScrollTrigger onEnter={onEnterViewport} onExit={onExitViewport}>
-      <DoubleLineHeaderStyle visible={visible}>
-        {firstLine}
-        <br />
-        {secondLine}
-      </DoubleLineHeaderStyle>
+      <SubSingleHeaderStyle visible={visible}>{subText}</SubSingleHeaderStyle>
     </ScrollTrigger>
   );
 };

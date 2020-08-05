@@ -12,6 +12,7 @@ type AppProps = {
 const theme = {
   colors: {
     header: '#3B4048',
+    subHeader: '#C6C6C6',
     lightGray: '#F7F8FA',
     pureWhite: '#FFFFFF',
   },
