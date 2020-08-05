@@ -1,6 +1,5 @@
 import React from 'react';
 import App from 'next/app';
-import Head from 'next/head';
 import '../styles/global.scss';
 
 import { ThemeProvider } from 'styled-components';
@@ -12,7 +11,9 @@ type AppProps = {
 
 const theme = {
   colors: {
-    primary: '#0070f3',
+    header: '#3B4048',
+    lightGray: '#F7F8FA',
+    pureWhite: '#FFFFFF',
   },
 };
 
@@ -22,10 +23,6 @@ export default class CustomApp extends App<AppProps> {
 
     return (
       <>
-        <Head>
-          <title>리드라이트 | 택배로 빌리는 무제한 종이책</title>
-          <meta name="description" content="디스크립션을 적는 곳입니다" />
-        </Head>
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
         </ThemeProvider>
