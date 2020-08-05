@@ -24,8 +24,8 @@ const ActionButton = styled.button`
 
   transform: scale(1);
   -webkit-transform: scale(1);
-  transition: transform 0.7s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
-  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
+  transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
 
   &:hover {
     cursor: pointer;
