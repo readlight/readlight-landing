@@ -4,8 +4,6 @@ import NavTextButton from '../atom/NavTextButton';
 import LargeActionButton from '../atom/LargeActionButton';
 
 const NavListWrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
   overflow: hidden;
   text-align: right;
   box-sizing: border-box;

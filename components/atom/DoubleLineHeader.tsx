@@ -11,7 +11,6 @@ type DoubleLineHeaderStyle = {
 
 const DoubleLineHeaderStyle = styled.h1`
   color: ${({ theme }) => theme.colors.header};
-
   opacity: ${(props) => (props.visible ? '1' : '0.3')};
   transform: ${(props) =>
     props.visible ? 'translateY(30px)' : 'translate(0px)'};
