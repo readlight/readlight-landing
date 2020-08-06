@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ScrollTrigger from 'react-scroll-trigger';
 import { useState } from 'react';
 import MockupDevice from '../atom/MockupDevice';
+import MockupImageWrapper from '../molecule/MockupImageWrapper';
 
 type Props = {};
 
@@ -14,9 +15,9 @@ const MockupDeviceBox = styled.div`
     props.visible ? 'translateY(30px)' : 'translate(0px)'};
   -webkit-transform: ${(props) =>
     props.visible ? 'translateY(30px)' : 'translate(0px)'};
-  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0, 0, 0.2, 1) 0.0001s,
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.2, 1) 0.0001s,
     opacity 0.9s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
-  transition: transform 0.7s cubic-bezier(0, 0, 0.2, 1) 0.0001s,
+  transition: transform 1s cubic-bezier(0, 0, 0.2, 1) 0.0001s,
     opacity 0.9s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
 `;
 
@@ -36,6 +37,7 @@ const MockupWrapper = ({}: Props) => {
     <ScrollTriggerWrapper onEnter={onEnterViewport} onExit={onExitViewport}>
       <MockupDeviceBox visible={visible}>
         <MockupDevice />
+        <MockupImageWrapper />
       </MockupDeviceBox>
     </ScrollTriggerWrapper>
   );
