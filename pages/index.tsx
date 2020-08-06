@@ -10,6 +10,7 @@ import ContentHeader from '../components/molecule/ContentHeader';
 import NavbarWrapper from '../components/template/NavbarWrapper';
 import Navbar from '../components/organism/Navbar';
 import ImageWrapper from '../components/template/ImageWrapper';
+import MockupWrapper from '../components/template/MockupWrapper';
 
 // color: ${({ theme }) => theme.colors.primary};
 
@@ -42,6 +43,7 @@ export default function Home() {
               secondLine={'좋은책을 읽도록'}
               subText={'데일리 피드'}
             />
+            <MockupWrapper></MockupWrapper>
           </ContentBox>
         </WidthAdjust>
       </Layout>
