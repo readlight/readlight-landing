@@ -25,6 +25,8 @@ const DoubleLineHeaderStyle = styled.h1`
   }
 `;
 
+const ScrollTriggerWrapper: any = ScrollTrigger;
+
 const DoubleLineHeader: React.FC<Props> = ({ firstLine, secondLine }) => {
   const [visible, setVisible] = useState(false);
 
@@ -37,13 +39,13 @@ const DoubleLineHeader: React.FC<Props> = ({ firstLine, secondLine }) => {
   };
 
   return (
-    <ScrollTrigger onEnter={onEnterViewport} onExit={onExitViewport}>
+    <ScrollTriggerWrapper onEnter={onEnterViewport} onExit={onExitViewport}>
       <DoubleLineHeaderStyle visible={visible}>
         {firstLine}
         <br />
         {secondLine}
       </DoubleLineHeaderStyle>
-    </ScrollTrigger>
+    </ScrollTriggerWrapper>
   );
 };
 
