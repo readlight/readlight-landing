@@ -19,6 +19,7 @@ export default function Home() {
         <meta name="description" content="디스크립션을 적는 곳입니다" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <img src="./../public/cover.jpg" />
 
       <Layout
         isBackgroundGray={false}

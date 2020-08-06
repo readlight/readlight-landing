@@ -15,9 +15,9 @@ const ButtonExpandArea = styled.div`
 const ActionButton = styled.button`
   color: ${({ theme }) => theme.colors.pureWhite};
   background-color: ${({ theme }) => theme.colors.pointBlue};
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 6px 15px;
+  padding: 4px 14px;
   border: 0px solid;
   border-radius: 5px;
   outline: none;
