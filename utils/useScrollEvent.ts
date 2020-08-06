@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ScrollDirection } from './types';
+import { ScrollDirection } from '../types/ScrollDirection';
 
 export default function useScollEvent(): {
   scrollPosition: number | undefined;
