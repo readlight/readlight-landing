@@ -11,6 +11,10 @@ const LogoButtonClickArea = styled.div`
 const LogoSvg = styled.img`
   margin-top: 22px;
   height: 28px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const LogoButton: React.FC<Props> = ({ targetPath }) => {

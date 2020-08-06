@@ -26,6 +26,8 @@ const SubSingleHeaderStyle = styled.h2`
   }
 `;
 
+const ScrollTriggerWrapper: any = ScrollTrigger;
+
 const DoubleLineHeader: React.FC<Props> = ({ subText }) => {
   const [visible, setVisible] = useState(false);
 
@@ -38,9 +40,9 @@ const DoubleLineHeader: React.FC<Props> = ({ subText }) => {
   };
 
   return (
-    <ScrollTrigger onEnter={onEnterViewport} onExit={onExitViewport}>
+    <ScrollTriggerWrapper onEnter={onEnterViewport} onExit={onExitViewport}>
       <SubSingleHeaderStyle visible={visible}>{subText}</SubSingleHeaderStyle>
-    </ScrollTrigger>
+    </ScrollTriggerWrapper>
   );
 };
 
