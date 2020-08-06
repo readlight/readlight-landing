@@ -17,7 +17,7 @@ const ActionButton = styled.button`
   background-color: ${({ theme }) => theme.colors.pointBlue};
   font-size: 16px;
   font-weight: bold;
-  padding: 4px 14px;
+  padding: 5px 14px;
   border: 0px solid;
   border-radius: 5px;
   outline: none;

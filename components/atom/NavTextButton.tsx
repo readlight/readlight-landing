@@ -15,7 +15,7 @@ const NavText = styled.span`
   font-size: 16px;
   font-weight: normal;
   padding: 10px 6px;
-  margin: 0 10px;
+  margin: 0 12px;
 
   &:hover {
     cursor: pointer;

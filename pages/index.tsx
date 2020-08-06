@@ -7,8 +7,9 @@ import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
 import ContentHeader from '../components/molecule/ContentHeader';
+import NavbarWrapper from '../components/template/NavbarWrapper';
 import Navbar from '../components/organism/Navbar';
-import vercel from '../public/vercel.svg';
+import ImageWrapper from '../components/template/ImageWrapper';
 
 // color: ${({ theme }) => theme.colors.primary};
 
@@ -21,15 +22,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout
-        isBackgroundGray={false}
-        desktopHeight={'100vh'}
-        mobileHeight={'100vh'}
-      >
-        <Navbar />
-      </Layout>
+      <ImageWrapper desktopHeight={'100vh'} mobileHeight={'100vh'}>
+        <NavbarWrapper>
+          <Navbar />
+        </NavbarWrapper>
+      </ImageWrapper>
 
-      <img src={`/cover.jpg`} alt="hi" draggable="false" />
+      {/*<img src={`/cover.jpg`} alt="hi" draggable="false" />s*/}
 
       <Layout
         isBackgroundGray={true}
