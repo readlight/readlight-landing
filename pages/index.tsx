@@ -1,8 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import SubSingleHeader from '../components/atom/SubSingleHeader';
-import DoubleLineHeader from '../components/atom/DoubleLineHeader';
-import { DocumentContext } from 'next/dist/next-server/lib/document-context';
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
@@ -11,8 +8,7 @@ import NavbarWrapper from '../components/template/NavbarWrapper';
 import Navbar from '../components/organism/Navbar';
 import ImageWrapper from '../components/template/ImageWrapper';
 import MockupWrapper from '../components/template/MockupWrapper';
-
-// color: ${({ theme }) => theme.colors.primary};
+import FeatureChange from '../components/molecule/FeatureChange';
 
 export default function Home() {
   return (
@@ -55,8 +51,12 @@ export default function Home() {
       >
         <WidthAdjust>
           <ContentBox>
-            <SubSingleHeader subText={'반가워요'} />
-            <DoubleLineHeader firstLine={'두번째'} secondLine={'테스트'} />
+            <ContentHeader
+              firstLine={'침대에 누워서'}
+              secondLine={'손가락으로 주문'}
+              subText={'택배로 배송'}
+            />
+            <FeatureChange />
           </ContentBox>
         </WidthAdjust>
       </Layout>
