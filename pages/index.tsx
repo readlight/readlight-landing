@@ -8,6 +8,7 @@ import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
 import ContentHeader from '../components/molecule/ContentHeader';
 import Navbar from '../components/organism/Navbar';
+import vercel from '../public/vercel.svg';
 
 // color: ${({ theme }) => theme.colors.primary};
 
@@ -19,7 +20,6 @@ export default function Home() {
         <meta name="description" content="디스크립션을 적는 곳입니다" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img src="./../public/cover.jpg" />
 
       <Layout
         isBackgroundGray={false}
@@ -28,6 +28,8 @@ export default function Home() {
       >
         <Navbar />
       </Layout>
+
+      <img src={`/cover.jpg`} alt="hi" draggable="false" />
 
       <Layout
         isBackgroundGray={true}
