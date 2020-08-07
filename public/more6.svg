@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f1faec;
+      }
+
+      .cls-2 {
+        fill: #74d449;
+      }
+    </style>
+  </defs>
+  <g id="그룹_44" data-name="그룹 44" transform="translate(0.489 -0.022)">
+    <circle id="타원_17" data-name="타원 17" class="cls-1" cx="33" cy="33" r="33" transform="translate(-0.489 0.023)"/>
+    <path id="search-solid" class="cls-2" d="M26.387,23.132l-5.209-5.209a1.253,1.253,0,0,0-.888-.366h-.852a10.863,10.863,0,1,0-1.881,1.881v.852a1.253,1.253,0,0,0,.366.888l5.209,5.209a1.249,1.249,0,0,0,1.771,0l1.479-1.479A1.26,1.26,0,0,0,26.387,23.132ZM10.868,17.556a6.688,6.688,0,1,1,6.688-6.688A6.684,6.684,0,0,1,10.868,17.556Z" transform="translate(18.887 19.704)"/>
+  </g>
+</svg>

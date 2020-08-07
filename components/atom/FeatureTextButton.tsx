@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import FeatureContext from '../../utils/feature.context';
 import { FeatureList } from '../../types/FeatureList';
-import useFeatureList from '../../utils/useFeatureList';
+import featureStorage from '../../utils/featureStorage';
 
 type Props = {
   buttonText: string;
   isSelected: boolean;
   featureType: FeatureList;
+  changeFeature: Function;
 };
 
 const NavText = styled.span`
@@ -31,8 +32,8 @@ const FeatureTextButton: React.FC<Props> = ({
   buttonText,
   isSelected,
   featureType,
+  changeFeature,
 }) => {
-  const { changeFeature } = useFeatureList();
   return (
     <NavText
       onClick={() => {

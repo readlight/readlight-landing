@@ -6,6 +6,7 @@ export default function useScollEvent(): {
   scrollDirection: ScrollDirection;
 } {
   const isClient = typeof window === 'object';
+
   function getScrollEvent(scrollPosition) {
     return {
       scrollPosition: isClient ? scrollPosition : undefined,
@@ -21,10 +22,7 @@ export default function useScollEvent(): {
   }
 
   useEffect(() => {
-    if (!isClient) {
-      return;
-    }
-
+    if (!isClient) return;
     window.addEventListener('scroll', handleScroll);
     //return () => window.removeEventListener('scroll', handleScroll);
   }, []);
