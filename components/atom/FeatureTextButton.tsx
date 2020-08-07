@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import FeatureContext from '../../utils/feature.context';
 import { FeatureList } from '../../types/FeatureList';
-import featureStorage from '../../utils/featureStorage';
+import useFeature from '../../utils/useFeature';
 
 type Props = {
   buttonText: string;

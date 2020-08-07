@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FeatureList } from '../types/FeatureList';
 
-export default function featureStorage(): {
+export default function useFeature(): {
   feature: FeatureList;
   featureBooleanList: boolean[];
   changeFeature: (featureType: FeatureList) => void;
