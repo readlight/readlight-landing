@@ -15,9 +15,7 @@ export default function Test() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <FlexContentBox>
-            <DaliyFeedContent />
-          </FlexContentBox>
+          <DaliyFeedContent />
         </WidthAdjust>
       </Layout>
       <Layout

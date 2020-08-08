@@ -11,6 +11,7 @@ import ImageWrapper from '../components/template/ImageWrapper';
 import MockupWrapper from '../components/template/MockupWrapper';
 import MoreFeature from '../components/organism/MoreFeature';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
+import DailyFeedContent from '../components/organism/DailyFeedContent';
 
 export default function Home() {
   return (
@@ -28,22 +29,12 @@ export default function Home() {
       </ImageWrapper>
 
       <Layout
-        isBackgroundGray={true}
+        isBackgroundGray={false}
         desktopHeight={'920px'}
         mobileHeight={'350px'}
       >
         <WidthAdjust>
-          <ContentBox marginTop={'-100px'}>
-            <div>
-              <ContentHeader
-                firstLine={'한권을 읽더라도'}
-                secondLine={'좋은책을 읽도록'}
-                subText={'데일리 피드'}
-              />
-              <FeatureChange />
-            </div>
-            <MockupWrapper></MockupWrapper>
-          </ContentBox>
+          <DailyFeedContent />
         </WidthAdjust>
       </Layout>
 

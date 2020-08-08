@@ -7,8 +7,6 @@ type Props = {
 
 const FlexContentBoxStyle = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 `;
 
 const FlexContentBox = ({ children }: Props) => (

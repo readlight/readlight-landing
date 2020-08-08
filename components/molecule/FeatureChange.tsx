@@ -5,7 +5,8 @@ import useFeature from '../../utils/useFeature';
 import { FeatureList } from '../../types/FeatureList';
 
 const FeatureChangeWrapper = styled.div`
-  margin-top: 90px;
+  margin-top: 70px;
+  margin-bottom: 10px;
   padding: 0;
 `;
 

@@ -2,10 +2,9 @@ import React from 'react';
 import ContentHeader from '../molecule/ContentHeader';
 import FeatureChange from '../molecule/FeatureChange';
 import styled from 'styled-components';
-import SmallText from '../atom/SmallText';
 import ChangeableText from '../atom/ChangeableText';
 import useFeature from '../../utils/useFeature';
-import MockupDeviceWrapper from '../organism/MockupDeviceWrapper';
+import MockupDeviceWrapper from './MockupDeviceWrapper';
 
 type Props = {};
 
@@ -16,10 +15,11 @@ const DaliyFeedWrapper = styled.div`
 `;
 
 const ContentArea = styled.div`
-  margin-top: 200px;
+  margin-top: 180px;
+  margin-right: 180px;
 `;
 
-const DaliyFeedContent: React.FC<Props> = () => {
+const DailyFeedContent: React.FC<Props> = () => {
   const imagePathList = [
     '/mobile-bookoftoday.png',
     '/mobile-collection.png',
@@ -28,6 +28,11 @@ const DaliyFeedContent: React.FC<Props> = () => {
   const { feature, featureBooleanList, changeFeature } = useFeature();
   return (
     <DaliyFeedWrapper>
+      <MockupDeviceWrapper
+        imagePath={imagePathList[feature]}
+        left={'-100px'}
+        right={'none'}
+      />
       <ContentArea>
         <ContentHeader
           firstLine={'한권을 읽더라도'}
@@ -41,9 +46,8 @@ const DaliyFeedContent: React.FC<Props> = () => {
         />
         <ChangeableText feature={feature} />
       </ContentArea>
-      <MockupDeviceWrapper imagePath={imagePathList[feature]} />
     </DaliyFeedWrapper>
   );
 };
 
-export default DaliyFeedContent;
+export default DailyFeedContent;

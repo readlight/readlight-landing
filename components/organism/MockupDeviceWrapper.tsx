@@ -5,7 +5,13 @@ import { useState } from 'react';
 import MockupDevice from '../atom/MockupDevice';
 import MockupImageWrapper from '../molecule/MockupImageWrapper';
 
-type Props = { imagePath: string };
+type Props = { imagePath: string; left: string; right: string };
+
+const PositionWrapper = styled.div`
+  position: relative;
+  right: ${(props) => props.right};
+  left: ${(props) => props.left};
+`;
 
 const MockupDeviceBox = styled.div`
   margin-top: 50px;
@@ -24,7 +30,7 @@ const MockupDeviceBox = styled.div`
 
 const ScrollTriggerWrapper: any = ScrollTrigger;
 
-const MockupWrapper = ({ imagePath }: Props) => {
+const MockupWrapper = ({ imagePath, left, right }: Props) => {
   const [visible, setVisible] = useState(false);
 
   const onEnterViewport = () => {
@@ -35,12 +41,14 @@ const MockupWrapper = ({ imagePath }: Props) => {
     setVisible(false);
   };
   return (
-    <ScrollTriggerWrapper onEnter={onEnterViewport} onExit={onExitViewport}>
-      <MockupDeviceBox visible={visible}>
-        <MockupDevice />
-        <MockupImageWrapper imagePath={imagePath} />
-      </MockupDeviceBox>
-    </ScrollTriggerWrapper>
+    <PositionWrapper left={left} right={right}>
+      <ScrollTriggerWrapper onEnter={onEnterViewport} onExit={onExitViewport}>
+        <MockupDeviceBox visible={visible}>
+          <MockupDevice />
+          <MockupImageWrapper imagePath={imagePath} />
+        </MockupDeviceBox>
+      </ScrollTriggerWrapper>
+    </PositionWrapper>
   );
 };
 

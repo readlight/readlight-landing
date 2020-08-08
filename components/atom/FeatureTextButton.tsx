@@ -9,13 +9,13 @@ type Props = {
   changeFeature: Function;
 };
 
-// border-bottom: ${(props) => props.isSelected ? '2px solid #3B4048' : '0px solid'};
-
 const NavText = styled.span`
-  color: ${(props) => (props.isSelected ? 'black' : 'gray')};
-  font-size: 17px;
-  font-weight: ${(props) => (props.isSelected ? 'bold' : 'normal')};
-  padding: 4px 1px;
+  color: ${(props) => (props.isSelected ? '#0E62FF' : '#C6C6C6')};
+  font-size: 20px;
+  font-weight: ${(props) => (props.isSelected ? 'bold' : 'bold')};
+  border-bottom: ${(props) =>
+    props.isSelected ? '3px solid #0E62FF' : '0px solid'};
+  padding: 2px 1px;
   margin-right: 25px;
   transition: color 200ms ease-in-out;
   user-select: none;
