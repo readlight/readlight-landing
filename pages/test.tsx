@@ -5,6 +5,8 @@ import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import FlexContentBox from '../components/template/FlexContentBox';
 import MockupDeviceWrapper from '../components/organism/MockupWrapper';
 import DailyFeedContent from '../components/organism/DailyFeedContent';
+import ActiveHeaderBox from '../components/molecule/ActiveHeaderBox';
+import ActiveHeader from '../components/atom/ActiveHeader';
 
 export default function Test() {
   return (
@@ -15,7 +17,11 @@ export default function Test() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <DailyFeedContent />
+          <ActiveHeaderBox subText={'케이스1: 반납하기'}>
+            음... 잘 읽었는데
+            <br />
+            다시 읽을것 같진 않아요
+          </ActiveHeaderBox>
         </WidthAdjust>
       </Layout>
       <Layout
@@ -24,7 +30,7 @@ export default function Test() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox marginTop={'-200px;'}>
+          <ContentBox>
             <MoreFeatureBox />
           </ContentBox>
         </WidthAdjust>

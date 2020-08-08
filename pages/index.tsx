@@ -64,7 +64,7 @@ export default function Home() {
       </Layout>
 
       <Layout
-        isBackgroundGray={false}
+        isBackgroundGray={true}
         desktopHeight={'100vh'}
         mobileHeight={'100vh'}
       >
