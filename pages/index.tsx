@@ -25,8 +25,6 @@ export default function Home() {
         </NavbarWrapper>
       </ImageWrapper>
 
-      {/*<img src={`/cover.jpg`} alt="hi" draggable="false" />s*/}
-
       <Layout
         isBackgroundGray={true}
         desktopHeight={'920px'}
