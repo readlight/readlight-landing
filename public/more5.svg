@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffedeb;
+      }
+
+      .cls-2 {
+        fill: #ff5342;
+      }
+    </style>
+  </defs>
+  <g id="그룹_42" data-name="그룹 42" transform="translate(0.489)">
+    <circle id="타원_15" data-name="타원 15" class="cls-1" cx="33" cy="33" r="33" transform="translate(-0.489)"/>
+    <path id="heart-solid_1_" data-name="heart-solid (1)" class="cls-2" d="M23.851,33.548a7.059,7.059,0,0,0-9.632.7L13.2,35.3,12.186,34.25a7.058,7.058,0,0,0-9.632-.7,7.412,7.412,0,0,0-.511,10.731l9.988,10.313a1.618,1.618,0,0,0,2.338,0l9.988-10.313a7.407,7.407,0,0,0-.506-10.731Z" transform="translate(19.878 -10.604)"/>
+  </g>
+</svg>

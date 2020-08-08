@@ -10,6 +10,6 @@ const Device = styled.img`
   z-index: 10;
 `;
 
-const MockupWrapper = ({}: Props) => <Device src="/device.png" />;
+const MockupDevice = ({}: Props) => <Device src="/device.png" />;
 
-export default MockupWrapper;
+export default MockupDevice;

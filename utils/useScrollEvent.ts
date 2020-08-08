@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { ScrollDirection } from './types';
+import { ScrollDirection } from '../types/ScrollDirection';
 
 export default function useScollEvent(): {
   scrollPosition: number | undefined;
   scrollDirection: ScrollDirection;
 } {
   const isClient = typeof window === 'object';
+
   function getScrollEvent(scrollPosition) {
     return {
       scrollPosition: isClient ? scrollPosition : undefined,
@@ -21,10 +22,7 @@ export default function useScollEvent(): {
   }
 
   useEffect(() => {
-    if (!isClient) {
-      return;
-    }
-
+    if (!isClient) return;
     window.addEventListener('scroll', handleScroll);
     //return () => window.removeEventListener('scroll', handleScroll);
   }, []);

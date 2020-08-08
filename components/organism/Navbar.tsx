@@ -7,10 +7,9 @@ type Props = {};
 
 const NavbarContentWrapper = styled.div`
   position: relative;
-  max-width: 1064px;
+  max-width: 1028px;
   margin-left: auto;
   margin-right: auto;
-  padding: 9 12px;
   height: 60px;
   box-sizing: border-box;
 `;
