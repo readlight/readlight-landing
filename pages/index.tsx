@@ -10,6 +10,7 @@ import FeatureChange from '../components/molecule/FeatureChange';
 import ImageWrapper from '../components/template/ImageWrapper';
 import MockupWrapper from '../components/template/MockupWrapper';
 import MoreFeature from '../components/organism/MoreFeature';
+import MoreFeatureBox from '../components/template/MoreFeatureBox';
 
 export default function Home() {
   return (
@@ -32,30 +33,32 @@ export default function Home() {
         mobileHeight={'350px'}
       >
         <WidthAdjust>
-          <ContentBox>
-            <ContentHeader
-              firstLine={'한권을 읽더라도'}
-              secondLine={'좋은책을 읽도록'}
-              subText={'데일리 피드'}
-            />
+          <ContentBox marginTop={'-100px'}>
+            <div>
+              <ContentHeader
+                firstLine={'한권을 읽더라도'}
+                secondLine={'좋은책을 읽도록'}
+                subText={'데일리 피드'}
+              />
+              <FeatureChange />
+            </div>
             <MockupWrapper></MockupWrapper>
           </ContentBox>
         </WidthAdjust>
       </Layout>
 
       <Layout
-        isBackgroundGray={false}
+        isBackgroundGray={true}
         desktopHeight={'100vh'}
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox>
+          <ContentBox marginTop={'-100px'}>
             <ContentHeader
               firstLine={'침대에 누워서'}
               secondLine={'손가락으로 주문'}
               subText={'택배로 배송'}
             />
-            <FeatureChange />
           </ContentBox>
         </WidthAdjust>
       </Layout>
@@ -66,12 +69,8 @@ export default function Home() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox>
-            <MoreFeature iconPath={'/more1.svg'} headerText={'대여기간 연장'}>
-              책을 다 못읽었다면
-              <br />
-              추가결제로 연장할수 있어요
-            </MoreFeature>
+          <ContentBox marginTop={'-220px;'}>
+            <MoreFeatureBox />
           </ContentBox>
         </WidthAdjust>
       </Layout>

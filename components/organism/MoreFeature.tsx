@@ -10,6 +10,8 @@ type Props = {
 
 const MoreFeatureBox = styled.div`
   display: flex;
+  width: 32%;
+  padding-top: 40px;
 `;
 
 const MoreFeature: React.FC<Props> = ({ headerText, iconPath, children }) => {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import MockupImage from '../atom/MockupImage';
 
-type Props = {};
+type Props = { imagePath: string };
 
 const ScrennBox = styled.div`
   position: absolute;
@@ -13,9 +13,9 @@ const ScrennBox = styled.div`
   box-sizing: border-box;
 `;
 
-const MockupDeviceWrapper = ({}: Props) => (
+const MockupDeviceWrapper = ({ imagePath }: Props) => (
   <ScrennBox>
-    <MockupImage path={'/testmock.png'} />
+    <MockupImage path={imagePath} />
   </ScrennBox>
 );
 
