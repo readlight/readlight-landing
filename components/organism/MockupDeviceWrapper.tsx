@@ -14,7 +14,6 @@ const PositionWrapper = styled.div`
 `;
 
 const MockupDeviceBox = styled.div`
-  margin-top: 50px;
   visibility: visible;
 
   opacity: ${(props) => (props.visible ? '1' : '0.3')};

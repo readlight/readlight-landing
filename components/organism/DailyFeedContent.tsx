@@ -15,8 +15,8 @@ const DaliyFeedWrapper = styled.div`
 `;
 
 const ContentArea = styled.div`
-  margin-top: 180px;
-  margin-right: 180px;
+  margin-top: 130px;
+  margin-right: 150px;
 `;
 
 const DailyFeedContent: React.FC<Props> = () => {
@@ -30,7 +30,7 @@ const DailyFeedContent: React.FC<Props> = () => {
     <DaliyFeedWrapper>
       <MockupDeviceWrapper
         imagePath={imagePathList[feature]}
-        left={'-100px'}
+        left={'-70px'}
         right={'none'}
       />
       <ContentArea>

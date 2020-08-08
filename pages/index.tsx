@@ -6,10 +6,7 @@ import ContentBox from '../components/template/ContentBox';
 import ContentHeader from '../components/molecule/ContentHeader';
 import NavbarWrapper from '../components/template/NavbarWrapper';
 import Navbar from '../components/organism/Navbar';
-import FeatureChange from '../components/molecule/FeatureChange';
 import ImageWrapper from '../components/template/ImageWrapper';
-import MockupWrapper from '../components/template/MockupWrapper';
-import MoreFeature from '../components/organism/MoreFeature';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import DailyFeedContent from '../components/organism/DailyFeedContent';
 
@@ -30,11 +27,19 @@ export default function Home() {
 
       <Layout
         isBackgroundGray={false}
-        desktopHeight={'920px'}
+        desktopHeight={'100vh'}
         mobileHeight={'350px'}
       >
         <WidthAdjust>
-          <DailyFeedContent />
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              height: '100%',
+            }}
+          >
+            <DailyFeedContent />
+          </div>
         </WidthAdjust>
       </Layout>
 

@@ -4,7 +4,7 @@ import ContentBox from '../components/template/ContentBox';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import FlexContentBox from '../components/template/FlexContentBox';
 import MockupDeviceWrapper from '../components/organism/MockupDeviceWrapper';
-import DaliyFeedContent from '../components/organism/DaliyFeedContent';
+import DailyFeedContent from '../components/organism/DailyFeedContent';
 
 export default function Test() {
   return (
@@ -15,7 +15,7 @@ export default function Test() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <DaliyFeedContent />
+          <DailyFeedContent />
         </WidthAdjust>
       </Layout>
       <Layout
