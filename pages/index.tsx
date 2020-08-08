@@ -6,9 +6,10 @@ import ContentBox from '../components/template/ContentBox';
 import ContentHeader from '../components/molecule/ContentHeader';
 import NavbarWrapper from '../components/template/NavbarWrapper';
 import Navbar from '../components/organism/Navbar';
+import FeatureChange from '../components/molecule/FeatureChange';
 import ImageWrapper from '../components/template/ImageWrapper';
 import MockupWrapper from '../components/template/MockupWrapper';
-import FeatureChange from '../components/molecule/FeatureChange';
+import MoreFeature from '../components/organism/MoreFeature';
 
 export default function Home() {
   return (
@@ -55,6 +56,22 @@ export default function Home() {
               subText={'택배로 배송'}
             />
             <FeatureChange />
+          </ContentBox>
+        </WidthAdjust>
+      </Layout>
+
+      <Layout
+        isBackgroundGray={false}
+        desktopHeight={'100vh'}
+        mobileHeight={'100vh'}
+      >
+        <WidthAdjust>
+          <ContentBox>
+            <MoreFeature iconPath={'/more1.svg'} headerText={'대여기간 연장'}>
+              책을 다 못읽었다면
+              <br />
+              추가결제로 연장할수 있어요
+            </MoreFeature>
           </ContentBox>
         </WidthAdjust>
       </Layout>
