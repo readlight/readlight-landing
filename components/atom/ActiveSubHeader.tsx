@@ -8,6 +8,8 @@ type Props = { children: React.ReactNode; isActive: boolean };
 const SubSingleHeaderStyle = styled.h2`
   color: ${({ theme }) => theme.colors.subHeader};
   opacity: ${(props) => (props.isActive ? '1' : '0.3')};
+  transition: opcaity 230ms ease-out;
+  user-select: none;
 
   @media (max-width: 768px) {
   }

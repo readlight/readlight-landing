@@ -7,6 +7,9 @@ import MockupDeviceWrapper from '../components/organism/MockupWrapper';
 import DailyFeedContent from '../components/organism/DailyFeedContent';
 import ActiveHeaderBox from '../components/molecule/ActiveHeaderBox';
 import ActiveHeader from '../components/atom/ActiveHeader';
+import AfterReadContent from '../components/molecule/AfterReadContent';
+import AfterReadCase from '../components/organism/AfterReadCase';
+import AfterRead from '../components/template/AfterRead';
 
 export default function Test() {
   return (
@@ -17,11 +20,9 @@ export default function Test() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ActiveHeaderBox subText={'케이스1: 반납하기'}>
-            음... 잘 읽었는데
-            <br />
-            다시 읽을것 같진 않아요
-          </ActiveHeaderBox>
+          <ContentBox>
+            <AfterRead />
+          </ContentBox>
         </WidthAdjust>
       </Layout>
       <Layout
