@@ -11,7 +11,7 @@ const FeatureChangeWrapper = styled.div`
 `;
 
 const NavButtonList = () => {
-  const { feature, featureBooleanList, changeFeature } = useFeature();
+  const { featureBooleanList, changeFeature } = useFeature();
 
   return (
     <FeatureChangeWrapper>

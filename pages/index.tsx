@@ -9,7 +9,6 @@ import Navbar from '../components/organism/Navbar';
 import ImageWrapper from '../components/template/ImageWrapper';
 import MockupWrapper from '../components/template/MockupWrapper';
 import FeatureChange from '../components/molecule/FeatureChange';
-import FeatureProvider from '../utils/FeatureProvider.component';
 
 export default function Home() {
   return (
@@ -52,14 +51,12 @@ export default function Home() {
       >
         <WidthAdjust>
           <ContentBox>
-            <FeatureProvider>
-              <ContentHeader
-                firstLine={'침대에 누워서'}
-                secondLine={'손가락으로 주문'}
-                subText={'택배로 배송'}
-              />
-              <FeatureChange />
-            </FeatureProvider>
+            <ContentHeader
+              firstLine={'침대에 누워서'}
+              secondLine={'손가락으로 주문'}
+              subText={'택배로 배송'}
+            />
+            <FeatureChange />
           </ContentBox>
         </WidthAdjust>
       </Layout>

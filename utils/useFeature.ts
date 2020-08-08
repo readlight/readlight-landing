@@ -28,7 +28,7 @@ export default function useFeature(): {
   }
 
   const [featureData, setFeatureData] = useState(
-    updateFeature(FeatureList.READERSPICK)
+    updateFeature(FeatureList.COLLECTION)
   );
 
   useEffect(() => {
