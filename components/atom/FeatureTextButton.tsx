@@ -17,7 +17,7 @@ const NavText = styled.span`
   font-weight: ${(props) => (props.isSelected ? 'bold' : 'normal')};
   padding: 4px 1px;
   margin-right: 25px;
-  transition: color 300ms ease-in-out;
+  transition: color 200ms ease-in-out;
   user-select: none;
 
   &:hover {
