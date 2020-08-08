@@ -6,7 +6,7 @@ type Props = { firstLine: string; secondLine: string; subText: string };
 const ContentHeader: React.FC<Props> = ({ firstLine, secondLine, subText }) => {
   return (
     <div>
-      <SubSingleHeader subText={subText} />
+      <SubSingleHeader textAlign={'left'} subText={subText} />
       <DoubleLineHeader firstLine={firstLine} secondLine={secondLine} />
     </div>
   );
