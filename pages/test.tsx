@@ -3,7 +3,7 @@ import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import FlexContentBox from '../components/template/FlexContentBox';
-import MockupDeviceWrapper from '../components/organism/MockupDeviceWrapper';
+import MockupDeviceWrapper from '../components/organism/MockupWrapper';
 import DailyFeedContent from '../components/organism/DailyFeedContent';
 
 export default function Test() {

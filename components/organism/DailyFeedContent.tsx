@@ -4,7 +4,7 @@ import FeatureChange from '../molecule/FeatureChange';
 import styled from 'styled-components';
 import ChangeableText from '../atom/ChangeableText';
 import useFeature from '../../utils/useFeature';
-import MockupDeviceWrapper from './MockupDeviceWrapper';
+import MockupDeviceWrapper from './MockupWrapper';
 
 type Props = {};
 

@@ -16,7 +16,7 @@ const FeatureList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 80px;
 `;
 
 const MoreFeatureBox: React.FC<Props> = () => {

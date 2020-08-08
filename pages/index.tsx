@@ -9,13 +9,17 @@ import Navbar from '../components/organism/Navbar';
 import ImageWrapper from '../components/template/ImageWrapper';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import DailyFeedContent from '../components/organism/DailyFeedContent';
+import DeliveryContent from '../components/organism/DeliveryContent';
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
         <title>리드라이트 | 택배로 빌리는 무제한 종이책</title>
-        <meta name="description" content="디스크립션을 적는 곳입니다" />
+        <meta
+          name="description"
+          content="월 9,900원 구독으로 원하는 종이책을 마음껏 빌려봐요"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -31,15 +35,9 @@ export default function Home() {
         mobileHeight={'350px'}
       >
         <WidthAdjust>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              height: '100%',
-            }}
-          >
+          <ContentBox>
             <DailyFeedContent />
-          </div>
+          </ContentBox>
         </WidthAdjust>
       </Layout>
 
@@ -49,12 +47,8 @@ export default function Home() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox marginTop={'-100px'}>
-            <ContentHeader
-              firstLine={'침대에 누워서'}
-              secondLine={'손가락으로 주문'}
-              subText={'택배로 배송'}
-            />
+          <ContentBox>
+            <DeliveryContent />
           </ContentBox>
         </WidthAdjust>
       </Layout>
@@ -65,7 +59,17 @@ export default function Home() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox marginTop={'-220px;'}>
+          <ContentBox>gk</ContentBox>
+        </WidthAdjust>
+      </Layout>
+
+      <Layout
+        isBackgroundGray={false}
+        desktopHeight={'100vh'}
+        mobileHeight={'100vh'}
+      >
+        <WidthAdjust>
+          <ContentBox>
             <MoreFeatureBox />
           </ContentBox>
         </WidthAdjust>
