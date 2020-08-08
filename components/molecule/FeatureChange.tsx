@@ -1,17 +1,16 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import FeatureTextButton from '../atom/FeatureTextButton';
 import useFeature from '../../utils/useFeature';
 import { FeatureList } from '../../types/FeatureList';
-import useScrollEvent from '../../utils/useScrollEvent';
 
 const FeatureChangeWrapper = styled.div`
   margin-top: 90px;
   padding: 0;
 `;
 
-const NavButtonList = () => {
-  const { featureBooleanList, changeFeature } = useFeature();
+const NavButtonList = ({ feature, featureBooleanList, changeFeature }) => {
+  //const { feature, featureBooleanList, changeFeature } = useFeature();
 
   return (
     <FeatureChangeWrapper>

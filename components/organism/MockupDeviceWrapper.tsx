@@ -5,9 +5,10 @@ import { useState } from 'react';
 import MockupDevice from '../atom/MockupDevice';
 import MockupImageWrapper from '../molecule/MockupImageWrapper';
 
-type Props = {};
+type Props = { imagePath: string };
 
 const MockupDeviceBox = styled.div`
+  margin-top: 50px;
   visibility: visible;
 
   opacity: ${(props) => (props.visible ? '1' : '0.3')};
@@ -23,7 +24,7 @@ const MockupDeviceBox = styled.div`
 
 const ScrollTriggerWrapper: any = ScrollTrigger;
 
-const MockupWrapper = ({}: Props) => {
+const MockupWrapper = ({ imagePath }: Props) => {
   const [visible, setVisible] = useState(false);
 
   const onEnterViewport = () => {
@@ -37,7 +38,7 @@ const MockupWrapper = ({}: Props) => {
     <ScrollTriggerWrapper onEnter={onEnterViewport} onExit={onExitViewport}>
       <MockupDeviceBox visible={visible}>
         <MockupDevice />
-        <MockupImageWrapper imagePath={'/testmock.png'} />
+        <MockupImageWrapper imagePath={imagePath} />
       </MockupDeviceBox>
     </ScrollTriggerWrapper>
   );

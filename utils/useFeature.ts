@@ -28,7 +28,7 @@ export default function useFeature(): {
   }
 
   const [featureData, setFeatureData] = useState(
-    updateFeature(FeatureList.COLLECTION)
+    updateFeature(FeatureList.BOOKOFTODAY)
   );
 
   useEffect(() => {

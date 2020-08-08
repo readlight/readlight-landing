@@ -1,14 +1,12 @@
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
-import MoreFeature from '../components/organism/MoreFeature';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import FlexContentBox from '../components/template/FlexContentBox';
-import ContentHeader from '../components/molecule/ContentHeader';
-import FeatureChange from '../components/molecule/FeatureChange';
 import MockupDeviceWrapper from '../components/organism/MockupDeviceWrapper';
+import DaliyFeedContent from '../components/organism/DaliyFeedContent';
 
-export default function Home() {
+export default function Test() {
   return (
     <div className="container">
       <Layout
@@ -18,15 +16,7 @@ export default function Home() {
       >
         <WidthAdjust>
           <FlexContentBox>
-            <div style={{ marginTop: '300px' }}>
-              <ContentHeader
-                firstLine={'한권을 읽더라도'}
-                secondLine={'좋은책을 읽도록'}
-                subText={'데일리 피드'}
-              />
-              <FeatureChange />
-            </div>
-            <MockupDeviceWrapper />
+            <DaliyFeedContent />
           </FlexContentBox>
         </WidthAdjust>
       </Layout>
