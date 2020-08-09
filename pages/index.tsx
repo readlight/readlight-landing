@@ -56,7 +56,7 @@ export default function Home() {
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'100vh'}
+        mobileHeight={'120vh'}
       >
         <WidthAdjust>
           <ContentBox>
@@ -68,7 +68,7 @@ export default function Home() {
       <Layout
         isBackgroundGray={true}
         desktopHeight={'100vh'}
-        mobileHeight={'100vh'}
+        mobileHeight={'120vh'}
       >
         <WidthAdjust>
           <ContentBox>

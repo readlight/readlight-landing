@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import ChangeableText from '../atom/ChangeableText';
 import useFeature from '../../utils/useFeature';
 import MockupDeviceWrapper from '../organism/MockupWrapper';
+import useWindowSize from '../../utils/useWindowSize';
 
 type Props = {};
 
@@ -28,6 +29,8 @@ const ContentArea = styled.div`
 `;
 
 const DailyFeed: React.FC<Props> = () => {
+  const { width } = useWindowSize();
+
   const imagePathList = [
     '/mobile-bookoftoday.png',
     '/mobile-collection.png',
@@ -36,17 +39,30 @@ const DailyFeed: React.FC<Props> = () => {
   const { feature, featureBooleanList, changeFeature } = useFeature();
   return (
     <DaliyFeedWrapper>
+      {width < 784 ? (
+        <ContentHeader
+          firstLine={'한권을 읽더라도'}
+          secondLine={'좋은책을 읽도록'}
+          subText={'데일리 피드'}
+        />
+      ) : (
+        <></>
+      )}
       <MockupDeviceWrapper
         imagePath={imagePathList[feature]}
         left={'-70px'}
         right={'none'}
       />
       <ContentArea>
-        <ContentHeader
-          firstLine={'한권을 읽더라도'}
-          secondLine={'좋은책을 읽도록'}
-          subText={'데일리 피드'}
-        />
+        {width < 784 ? (
+          <></>
+        ) : (
+          <ContentHeader
+            firstLine={'한권을 읽더라도'}
+            secondLine={'좋은책을 읽도록'}
+            subText={'데일리 피드'}
+          />
+        )}
         <FeatureChange
           feature={feature}
           featureBooleanList={featureBooleanList}

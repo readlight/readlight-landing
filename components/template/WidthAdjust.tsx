@@ -8,7 +8,7 @@ type Props = {
 const WidthAdjustStyle = styled.div`
   max-width: 1024px;
   width: 95%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0 24px;
   position: relative;
   height: 100%;

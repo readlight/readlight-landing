@@ -22,6 +22,10 @@ const DoubleLineHeaderStyle = styled.h1`
     opacity 0.9s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
 
   @media (max-width: 768px) {
+    text-align: center;
+    transition: none;
+    transform: translateY(50px);
+    opacity: 1;
   }
 `;
 

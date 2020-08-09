@@ -10,6 +10,10 @@ const ContentBoxStyle = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
 `;
 
 const ContentBox = ({ children }: Props) => (

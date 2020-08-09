@@ -12,13 +12,16 @@ const InlineText = styled.span`
   color: ${({ theme }) => theme.colors.pureBlack};
 
   @media (max-width: 768px) {
+    text-align: center;
   }
 `;
 const ChangeableText = ({ feature }: Props) => {
-  const textData = ['안녕하세요', '반갑습니다', '오예'];
+  const textData = ['안녕하세요', '반갑습니다 가나다라마바사', '오예'];
   return (
     <InlineText>
-      <SmallText>{textData[feature]}</SmallText>
+      <div>
+        <SmallText>{textData[feature]}</SmallText>
+      </div>
     </InlineText>
   );
 };

@@ -1,13 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import FeatureTextButton from '../atom/FeatureTextButton';
-import useFeature from '../../utils/useFeature';
 import { FeatureList } from '../../types/FeatureList';
 
 const FeatureChangeWrapper = styled.div`
   margin-top: 70px;
   margin-bottom: 10px;
   padding: 0;
+
+  @media (max-width: 768px) {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
 `;
 
 const NavButtonList = ({ feature, featureBooleanList, changeFeature }) => {

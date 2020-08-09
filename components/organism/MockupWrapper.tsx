@@ -17,6 +17,8 @@ const PositionWrapper = styled.div`
     justify-content: center;
     position: static;
     width: 100%;
+    height: 500px;
+    overflow: hidden;
   }
 `;
 
