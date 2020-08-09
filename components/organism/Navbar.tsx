@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import NavButtonList from '../molecule/NavButtonList';
 import LogoButton from '../atom/LogoButton';
+import useScrollEvent from '../../utils/useScrollEvent';
 
 type Props = { isMobile: boolean };
 
@@ -19,10 +20,11 @@ const NavbarContentWrapper = styled.div`
 `;
 
 const Navbar: React.FC<Props> = ({ isMobile }) => {
+  const { scrollPosition, scrollDirection } = useScrollEvent();
   return (
     <NavbarContentWrapper>
       <LogoButton targetPath="/" />
-      <NavButtonList isMobile={isMobile} />
+      <NavButtonList scrollPosition={scrollPosition} isMobile={isMobile} />
     </NavbarContentWrapper>
   );
 };

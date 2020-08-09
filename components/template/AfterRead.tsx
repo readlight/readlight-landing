@@ -14,7 +14,6 @@ const AfterReadWrapper = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 40px;
-    text-align: center;
   }
 `;
 

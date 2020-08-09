@@ -15,6 +15,7 @@ import MobileDetect from 'mobile-detect';
 import { isMobile } from 'react-device-detect';
 import { useEffect } from 'react';
 import useDeviceDetect from '../utils/useDeviceDetect';
+import MainBannerContent from '../components/molecule/MainBannerContent';
 
 interface IProps {
   isMobile: boolean;
@@ -31,6 +32,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
         <NavbarWrapper>
           <Navbar isMobile={isMobile} />
         </NavbarWrapper>
+        <MainBannerContent />
       </ImageWrapper>
       <Layout
         isBackgroundGray={false}
@@ -59,7 +61,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'1000px'}
+        mobileHeight={'1200px'}
       >
         <WidthAdjust>
           <ContentBox>

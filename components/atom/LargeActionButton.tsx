@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Emoji from '../../utils/Emoji';
 
-type Props = { buttonText: string };
+type Props = { buttonText: string; scrollPosition: number };
 
 const ButtonExpandArea = styled.div`
   display: flex;
@@ -24,8 +24,10 @@ const ActionButton = styled.button`
 
   transform: scale(1);
   -webkit-transform: scale(1);
-  transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 1) 0.0001s;
+  transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1) 0.0001s,
+    opacity 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 1) 0.0001s,
+    opacity 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;
@@ -33,10 +35,10 @@ const ActionButton = styled.button`
   }
 `;
 
-const LargeActionButton: React.FC<Props> = ({ buttonText }) => {
+const LargeActionButton: React.FC<Props> = ({ buttonText, scrollPosition }) => {
   return (
     <ButtonExpandArea>
-      <ActionButton>
+      <ActionButton scrollPosition={scrollPosition}>
         {buttonText}
         <Emoji
           symbol="🙌"

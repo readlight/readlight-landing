@@ -14,7 +14,7 @@ const NavListWrapper = styled.div`
   height: 100%;
 `;
 
-const NavButtonList = ({ isMobile }) => {
+const NavButtonList = ({ isMobile, scrollPosition }) => {
   return (
     <NavListWrapper>
       {isMobile ? (
@@ -26,8 +26,10 @@ const NavButtonList = ({ isMobile }) => {
             buttonText={'자주 묻는 질문'}
             targetPath={'/question'}
           />
-          <NavTextButton buttonText={'뭔가 하나만더'} targetPath={'/more'} />
-          <LargeActionButton buttonText={'펀딩하기'} />
+          <LargeActionButton
+            buttonText={'펀딩하기'}
+            scrollPosition={scrollPosition}
+          />
         </>
       )}
     </NavListWrapper>
