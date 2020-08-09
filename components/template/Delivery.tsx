@@ -25,6 +25,17 @@ const ContentArea = styled.div`
   }
 `;
 
+const MobileWrapper = styled.div`
+  margin-top: 20px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
 const Delivery: React.FC<Props> = ({ isMobile }) => {
   const imagePathList = ['/mobile-delivery.png'];
   return (
@@ -44,11 +55,11 @@ const Delivery: React.FC<Props> = ({ isMobile }) => {
               secondLine={'손가락으로 주문'}
               subText={'택배로 배송'}
             />
-            <div style={{ marginTop: '80px' }}>
+            <div style={{ marginTop: '60px' }}>
               <SmallText>
-                하하
+                리드라이트의 모든 책은 앱 내에서 대여 후 택배를 통해 받을 수
+                있습니다.
                 <br />
-                가나다라
               </SmallText>
             </div>
           </div>
@@ -60,13 +71,13 @@ const Delivery: React.FC<Props> = ({ isMobile }) => {
         right={'-30px'}
       />
       {isMobile && (
-        <div style={{ marginTop: '20px', textAlign: 'center' }}>
+        <MobileWrapper>
           <SmallText>
-            하하
+            리드라이트의 모든 책은 앱 내에서 대여 후 택배를 통해 받아볼 수
+            있습니다.
             <br />
-            가나다라
           </SmallText>
-        </div>
+        </MobileWrapper>
       )}
     </DeliveryWrapper>
   );

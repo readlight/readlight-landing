@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import ActiveHeader from '../atom/ActiveHeader';
-import ActiveSmallText from '../atom/ActiveSmallText';
-import LargeActionButton from '../atom/LargeActionButton';
 
 const MainBannerContentWrapper = styled.div`
   position: absolute;
@@ -53,7 +50,7 @@ const FundingButton = styled.button`
 
   @media (max-width: 768px) {
     position: absolute;
-    bottom: 30px;
+    bottom: 50px;
     background: ${({ theme }) => theme.colors.pointBlue};
     border: none;
     color: white;
