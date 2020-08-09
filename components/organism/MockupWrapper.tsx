@@ -11,6 +11,13 @@ const PositionWrapper = styled.div`
   position: relative;
   right: ${(props) => props.right};
   left: ${(props) => props.left};
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    position: static;
+    width: 100%;
+  }
 `;
 
 const MockupDeviceBox = styled.div`

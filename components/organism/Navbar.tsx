@@ -12,6 +12,10 @@ const NavbarContentWrapper = styled.div`
   margin-right: auto;
   height: 60px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Navbar: React.FC<Props> = () => {

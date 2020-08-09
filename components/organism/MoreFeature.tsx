@@ -12,6 +12,10 @@ const MoreFeatureBox = styled.div`
   display: flex;
   width: 32%;
   padding-top: 40px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const MoreFeature: React.FC<Props> = ({ headerText, iconPath, children }) => {

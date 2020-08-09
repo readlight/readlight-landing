@@ -23,6 +23,10 @@ const NavText = styled.span`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const FeatureTextButton: React.FC<Props> = ({

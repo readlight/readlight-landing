@@ -16,6 +16,7 @@ const ImageCover = styled.div`
   height: 230px;
   opacity: ${(props) => (props.isActive ? '1.0' : '0.3')};
   transition: opacity 230ms ease-out;
+  margin-bottom: 10px;
 `;
 
 const AfterReadContent = ({ isActive, imagePath }) => {

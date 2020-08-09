@@ -3,13 +3,13 @@ import Link from 'next/link';
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
-import ContentHeader from '../components/molecule/ContentHeader';
 import NavbarWrapper from '../components/template/NavbarWrapper';
 import Navbar from '../components/organism/Navbar';
 import ImageWrapper from '../components/template/ImageWrapper';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
-import DailyFeedContent from '../components/organism/DailyFeedContent';
-import DeliveryContent from '../components/organism/DeliveryContent';
+import DailyFeed from '../components/template/DailyFeed';
+import Delivery from '../components/template/Delivery';
+import AfterRead from '../components/template/AfterRead';
 
 export default function Home() {
   return (
@@ -32,11 +32,11 @@ export default function Home() {
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'350px'}
+        mobileHeight={'100vh'}
       >
         <WidthAdjust>
           <ContentBox>
-            <DailyFeedContent />
+            <DailyFeed />
           </ContentBox>
         </WidthAdjust>
       </Layout>
@@ -48,7 +48,7 @@ export default function Home() {
       >
         <WidthAdjust>
           <ContentBox>
-            <DeliveryContent />
+            <Delivery />
           </ContentBox>
         </WidthAdjust>
       </Layout>
@@ -59,7 +59,9 @@ export default function Home() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox>gk</ContentBox>
+          <ContentBox>
+            <AfterRead />
+          </ContentBox>
         </WidthAdjust>
       </Layout>
 

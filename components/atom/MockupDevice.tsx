@@ -8,6 +8,11 @@ const Device = styled.img`
   height: 789px;
   position: relative;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    width: 410px;
+    height: auto;
+  }
 `;
 
 const MockupDevice = ({}: Props) => <Device src="/device.png" />;

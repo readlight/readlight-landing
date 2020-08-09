@@ -9,6 +9,11 @@ const ScreenImage = styled.img`
   height: auto;
   z-index: 2;
   border-style: none;
+
+  @media (max-width: 768px) {
+    width: 216px;
+    top: -20px;
+  }
 `;
 
 const MockupDeviceWrapper = ({ path }: Props) => <ScreenImage src={path} />;

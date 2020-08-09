@@ -4,7 +4,7 @@ import ContentBox from '../components/template/ContentBox';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import FlexContentBox from '../components/template/FlexContentBox';
 import MockupDeviceWrapper from '../components/organism/MockupWrapper';
-import DailyFeedContent from '../components/organism/DailyFeedContent';
+import DailyFeed from '../components/template/DailyFeed';
 import ActiveHeaderBox from '../components/molecule/ActiveHeaderBox';
 import ActiveHeader from '../components/atom/ActiveHeader';
 import AfterReadContent from '../components/molecule/AfterReadContent';

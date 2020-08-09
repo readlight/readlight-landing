@@ -11,6 +11,13 @@ const ScrennBox = styled.div`
   left: 121px;
   top: 82px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    width: 216px;
+    left: -9999px;
+    right: -9999px;
+    margin: 0 auto;
+  }
 `;
 
 const MockupDeviceWrapper = ({ imagePath }: Props) => (
