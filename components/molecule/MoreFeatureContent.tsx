@@ -6,15 +6,27 @@ type Props = { headerText: string; children: React.ReactNode };
 
 const ContentWrapper = styled.div`
   margin: 12px 0 0 15px;
+
+  @media (max-width: 768px) {
+    margin: 9px 0 0 20px;
+  }
+`;
+
+const SmallTextWrapper = styled.div`
+  margin-top: 5px;
+
+  @media (max-width: 768px) {
+    margin-top: 0px;
+  }
 `;
 
 const MoreFeatureContent: React.FC<Props> = ({ headerText, children }) => {
   return (
     <ContentWrapper>
       <SmallHeader text={headerText} />
-      <div style={{ marginTop: '5px' }}>
+      <SmallTextWrapper>
         <SmallText>{children}</SmallText>
-      </div>
+      </SmallTextWrapper>
     </ContentWrapper>
   );
 };

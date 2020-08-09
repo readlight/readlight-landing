@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import App from 'next/app';
 import '../styles/global.scss';
 
@@ -26,6 +27,14 @@ export default class CustomApp extends App<AppProps> {
 
     return (
       <>
+        <Head>
+          <title>리드라이트 | 택배로 빌리는 무제한 종이책</title>
+          <meta
+            name="description"
+            content="월 9,900원 구독으로 원하는 종이책을 마음껏 빌려봐요"
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
         </ThemeProvider>

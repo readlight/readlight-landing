@@ -1,48 +1,45 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { NextPage, NextPageContext } from 'next';
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
-import ContentHeader from '../components/molecule/ContentHeader';
 import NavbarWrapper from '../components/template/NavbarWrapper';
 import Navbar from '../components/organism/Navbar';
-import FeatureChange from '../components/molecule/FeatureChange';
 import ImageWrapper from '../components/template/ImageWrapper';
-import MockupWrapper from '../components/template/MockupWrapper';
-import MoreFeature from '../components/organism/MoreFeature';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
+import DailyFeed from '../components/template/DailyFeed';
+import Delivery from '../components/template/Delivery';
+import AfterRead from '../components/template/AfterRead';
+import MobileDetect from 'mobile-detect';
+import { isMobile } from 'react-device-detect';
+import { useEffect } from 'react';
+import useDeviceDetect from '../utils/useDeviceDetect';
 
-export default function Home() {
+interface IProps {
+  isMobile: boolean;
+}
+
+const Index: NextPage<IProps> = ({ isMobile }) => {
+  useEffect(() => {
+    console.log(isMobile);
+  }, []);
+
   return (
     <div className="container">
-      <Head>
-        <title>리드라이트 | 택배로 빌리는 무제한 종이책</title>
-        <meta name="description" content="디스크립션을 적는 곳입니다" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <ImageWrapper desktopHeight={'100vh'} mobileHeight={'100vh'}>
         <NavbarWrapper>
-          <Navbar />
+          <Navbar isMobile={isMobile} />
         </NavbarWrapper>
       </ImageWrapper>
-
       <Layout
-        isBackgroundGray={true}
-        desktopHeight={'920px'}
-        mobileHeight={'350px'}
+        isBackgroundGray={false}
+        desktopHeight={'100vh'}
+        mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox marginTop={'-100px'}>
-            <div>
-              <ContentHeader
-                firstLine={'한권을 읽더라도'}
-                secondLine={'좋은책을 읽도록'}
-                subText={'데일리 피드'}
-              />
-              <FeatureChange />
-            </div>
-            <MockupWrapper></MockupWrapper>
+          <ContentBox>
+            <DailyFeed isMobile={isMobile} />
           </ContentBox>
         </WidthAdjust>
       </Layout>
@@ -53,12 +50,8 @@ export default function Home() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox marginTop={'-100px'}>
-            <ContentHeader
-              firstLine={'침대에 누워서'}
-              secondLine={'손가락으로 주문'}
-              subText={'택배로 배송'}
-            />
+          <ContentBox>
+            <Delivery isMobile={isMobile} />
           </ContentBox>
         </WidthAdjust>
       </Layout>
@@ -66,14 +59,50 @@ export default function Home() {
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
+        mobileHeight={'1000px'}
+      >
+        <WidthAdjust>
+          <ContentBox>
+            <AfterRead isMobile={isMobile} />
+          </ContentBox>
+        </WidthAdjust>
+      </Layout>
+
+      <Layout
+        isBackgroundGray={true}
+        desktopHeight={'100vh'}
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox marginTop={'-220px;'}>
+          <ContentBox>하하</ContentBox>
+        </WidthAdjust>
+      </Layout>
+      <Layout
+        isBackgroundGray={false}
+        desktopHeight={'100vh'}
+        mobileHeight={'120vh'}
+      >
+        <WidthAdjust>
+          <ContentBox>
             <MoreFeatureBox />
           </ContentBox>
         </WidthAdjust>
       </Layout>
     </div>
   );
-}
+};
+
+Index.getInitialProps = async (ctx: NextPageContext) => {
+  let mobile;
+
+  if (ctx.req) {
+    const md = new MobileDetect(ctx.req.headers['user-agent']);
+    mobile = !!md.mobile();
+  } else {
+    mobile = isMobile;
+  }
+
+  return { isMobile: mobile };
+};
+
+export default Index;

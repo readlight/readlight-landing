@@ -5,18 +5,17 @@ import SubSingleHeader from '../atom/SubSingleHeader';
 
 type Props = {};
 
-const FeatureBoxWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
 const FeatureList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 80px;
+
+  @media (max-width: 768px) {
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const MoreFeatureBox: React.FC<Props> = () => {

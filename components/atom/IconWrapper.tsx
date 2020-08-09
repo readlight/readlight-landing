@@ -9,6 +9,10 @@ const IconSvg = styled.img`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    height: 45px;
+  }
 `;
 
 const IconWrapper: React.FC<Props> = ({ iconPath }) => {

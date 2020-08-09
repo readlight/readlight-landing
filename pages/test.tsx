@@ -3,8 +3,13 @@ import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import FlexContentBox from '../components/template/FlexContentBox';
-import MockupDeviceWrapper from '../components/organism/MockupDeviceWrapper';
-import DaliyFeedContent from '../components/organism/DaliyFeedContent';
+import MockupDeviceWrapper from '../components/organism/MockupWrapper';
+import DailyFeed from '../components/template/DailyFeed';
+import ActiveHeaderBox from '../components/molecule/ActiveHeaderBox';
+import ActiveHeader from '../components/atom/ActiveHeader';
+import AfterReadContent from '../components/molecule/AfterReadContent';
+import AfterReadCase from '../components/organism/AfterReadCase';
+import AfterRead from '../components/template/AfterRead';
 
 export default function Test() {
   return (
@@ -15,9 +20,9 @@ export default function Test() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <FlexContentBox>
-            <DaliyFeedContent />
-          </FlexContentBox>
+          <ContentBox>
+            <AfterRead />
+          </ContentBox>
         </WidthAdjust>
       </Layout>
       <Layout
@@ -26,7 +31,7 @@ export default function Test() {
         mobileHeight={'100vh'}
       >
         <WidthAdjust>
-          <ContentBox marginTop={'-200px;'}>
+          <ContentBox>
             <MoreFeatureBox />
           </ContentBox>
         </WidthAdjust>

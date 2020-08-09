@@ -21,9 +21,9 @@ const ImageBox = styled.div<HeightHandlerProps>`
   background-position: right bottom;
   background-repeat: no-repeat;
   background-image: url('/testbackground.jpg');
+
   @media (max-width: 768px) {
     height: ${(props) => props.mobileHeight};
-    color: red;
   }
 `;
 

@@ -5,6 +5,7 @@ import useScrollEvent from '../../utils/useScrollEvent';
 type Props = { children: React.ReactNode };
 
 const NavbarBox = styled.div`
+  padding: 0 20px;
   position: fixed;
   z-index: 999;
   top: 0;
