@@ -29,7 +29,7 @@ const ContentArea = styled.div`
 `;
 
 const DailyFeed: React.FC<Props> = () => {
-  const { width } = useWindowSize();
+  const { width = 0 } = useWindowSize();
 
   const imagePathList = [
     '/mobile-bookoftoday.png',
@@ -57,7 +57,7 @@ const DailyFeed: React.FC<Props> = () => {
       />
       <ContentArea>
         {width < 784 ? (
-          <>ss</>
+          <></>
         ) : (
           <ContentHeader
             firstLine={'한권을 읽더라도'}

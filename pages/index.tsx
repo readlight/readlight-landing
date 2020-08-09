@@ -14,15 +14,6 @@ import AfterRead from '../components/template/AfterRead';
 export default function Home() {
   return (
     <div className="container">
-      <Head>
-        <title>리드라이트 | 택배로 빌리는 무제한 종이책</title>
-        <meta
-          name="description"
-          content="월 9,900원 구독으로 원하는 종이책을 마음껏 빌려봐요"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <ImageWrapper desktopHeight={'100vh'} mobileHeight={'100vh'}>
         <NavbarWrapper>
           <Navbar />
