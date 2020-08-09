@@ -40,11 +40,13 @@ const DailyFeed: React.FC<Props> = () => {
   return (
     <DaliyFeedWrapper>
       {width < 784 ? (
-        <ContentHeader
-          firstLine={'한권을 읽더라도'}
-          secondLine={'좋은책을 읽도록'}
-          subText={'데일리 피드'}
-        />
+        <div className="test">
+          <ContentHeader
+            firstLine={'한권을 읽더라도'}
+            secondLine={'좋은책을 읽도록'}
+            subText={'데일리 피드'}
+          />
+        </div>
       ) : (
         <></>
       )}
@@ -55,7 +57,7 @@ const DailyFeed: React.FC<Props> = () => {
       />
       <ContentArea>
         {width < 784 ? (
-          <></>
+          <>ss</>
         ) : (
           <ContentHeader
             firstLine={'한권을 읽더라도'}
