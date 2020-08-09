@@ -22,10 +22,7 @@ const NavButtonList = ({ isMobile, scrollPosition }) => {
       ) : (
         <>
           <NavTextButton buttonText={'회사 소개'} targetPath={'/company'} />
-          <NavTextButton
-            buttonText={'자주 묻는 질문'}
-            targetPath={'/question'}
-          />
+          <NavTextButton buttonText={'자주 묻는 질문'} targetPath={'/faq'} />
           <LargeActionButton
             buttonText={'펀딩하기'}
             scrollPosition={scrollPosition}

@@ -1,0 +1,75 @@
+import styled from 'styled-components';
+import { useState } from 'react';
+
+type Props = {
+  title: string;
+  category: number;
+  children: React.ReactNode;
+  faqIndex: number;
+  changeFaq: (faxIndex: number) => void;
+  index: number;
+};
+
+const FAQWrapper = styled.div`
+  background-color: white;
+  transition: background-color 230ms ease-in-out;
+  border-bottom: 1.5px solid #f7f8fa;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #f7f8fa;
+  }
+`;
+
+const TextWrapper = styled.div`
+  padding: 20px 20px;
+`;
+
+const QuestionText = styled.span`
+  user-select: none;
+  font-size: 20px;
+  font-weight: bold;
+`;
+
+const AnswerWrapper = styled.div`
+  padding-top: 20px;
+`;
+
+const AnswerText = styled.span`
+  padding-top: 20px;
+  user-select: none;
+  font-size: 18px;
+  font-weight: normal;
+`;
+
+const FAQItem = ({
+  title,
+  category,
+  children,
+  faqIndex,
+  changeFaq,
+  index,
+}: Props) => {
+  return (
+    <FAQWrapper
+      onClick={() => {
+        if (faqIndex == index) {
+          changeFaq(0);
+        } else {
+          changeFaq(index);
+        }
+      }}
+    >
+      <TextWrapper>
+        <QuestionText>Q. {title}</QuestionText>
+        {index == faqIndex && (
+          <AnswerWrapper>
+            <AnswerText>{children}</AnswerText>
+          </AnswerWrapper>
+        )}
+      </TextWrapper>
+    </FAQWrapper>
+  );
+};
+
+export default FAQItem;

@@ -32,7 +32,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
         <NavbarWrapper>
           <Navbar isMobile={isMobile} />
         </NavbarWrapper>
-        <MainBannerContent />
+        <MainBannerContent isMobile={isMobile} />
       </ImageWrapper>
       <Layout
         isBackgroundGray={false}

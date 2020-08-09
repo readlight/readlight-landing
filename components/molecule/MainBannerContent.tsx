@@ -9,6 +9,10 @@ const MainBannerContentWrapper = styled.div`
   right: 0;
   top: 250px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    top: 150px;
+  }
 `;
 
 const PaddingGiver = styled.div`
@@ -27,44 +31,52 @@ const QuickHeader = styled.h1`
   @media (max-width: 768px) {
     font-size: 25px;
     text-align: center;
+    color: white;
+    text-shadow: 0px 2px 25px gray;
   }
 `;
 
 const FundingButton = styled.button`
   margin-top: 15px;
   background: inherit;
-  padding: 10px 20px;
+  padding: 12px 25px;
   outline: none;
   font-size: 20px;
   color: black;
   font-weight: bold;
   border-radius: 7px;
-  border: 2px solid black;
+  border: 3px solid black;
 
   &:hover {
     cursor: pointer;
   }
 
   @media (max-width: 768px) {
-    width: 100%;
-    margin-top: calc(130% + 20px);
-    background-color: ${({ theme }) => theme.colors.pointBlue};
-    border: 0px solid;
+    position: absolute;
+    bottom: 30px;
+    background: ${({ theme }) => theme.colors.pointBlue};
+    border: none;
     color: white;
-    font-size: 19px;
-    padding: 14px;
+    font-size: 18px;
+    left: 30px;
+    right: 30px;
+    width: calc(100% - 60px);
+    height: 50px;
   }
 `;
 
-const MainBannerContent = () => {
+const MainBannerContent = ({ isMobile }) => {
   return (
-    <MainBannerContentWrapper>
-      <PaddingGiver>
-        <QuickHeader isActive={true}>택배로 빌리는 무제한 종이책</QuickHeader>
-        <QuickHeader isActive={true}>리드라이트</QuickHeader>
-        <FundingButton>지금 펀딩하기</FundingButton>
-      </PaddingGiver>
-    </MainBannerContentWrapper>
+    <>
+      <MainBannerContentWrapper>
+        <PaddingGiver>
+          <QuickHeader isActive={true}>택배로 빌리는 무제한 종이책</QuickHeader>
+          <QuickHeader isActive={true}>리드라이트</QuickHeader>
+          {!isMobile && <FundingButton>지금 펀딩하기</FundingButton>}
+        </PaddingGiver>
+      </MainBannerContentWrapper>
+      {isMobile && <FundingButton>지금 펀딩하기</FundingButton>}
+    </>
   );
 };
 
