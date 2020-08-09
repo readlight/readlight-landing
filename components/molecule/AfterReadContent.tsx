@@ -1,5 +1,6 @@
 import ActiveSmallText from '../atom/ActiveSmallText';
 import styled from 'styled-components';
+import ScrollTrigger from 'react-scroll-trigger';
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -19,16 +20,19 @@ const ImageCover = styled.div`
   margin-bottom: 10px;
 `;
 
+const AfterReadContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 25px;
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
+`;
+
 const AfterReadContent = ({ isActive, imagePath }) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'left',
-        marginBottom: '25px',
-      }}
-    >
+    <AfterReadContentWrapper>
       <ImageCover isActive={isActive}>
         <ImageWrapper imagePath={imagePath} />
       </ImageCover>
@@ -37,7 +41,7 @@ const AfterReadContent = ({ isActive, imagePath }) => {
         <br />
         가나다라마바사
       </ActiveSmallText>
-    </div>
+    </AfterReadContentWrapper>
   );
 };
 

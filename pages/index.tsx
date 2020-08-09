@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { NextPage, NextPageContext } from 'next';
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
@@ -10,8 +11,20 @@ import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import DailyFeed from '../components/template/DailyFeed';
 import Delivery from '../components/template/Delivery';
 import AfterRead from '../components/template/AfterRead';
+import MobileDetect from 'mobile-detect';
+import { isMobile } from 'react-device-detect';
+import { useEffect } from 'react';
+import useDeviceDetect from '../utils/useDeviceDetect';
 
-export default function Home() {
+interface IProps {
+  isMobile: boolean;
+}
+
+const Index: NextPage<IProps> = ({ isMobile }) => {
+  useEffect(() => {
+    console.log(isMobile);
+  }, []);
+
   return (
     <div className="container">
       <ImageWrapper desktopHeight={'100vh'} mobileHeight={'100vh'}>
@@ -19,7 +32,6 @@ export default function Home() {
           <Navbar />
         </NavbarWrapper>
       </ImageWrapper>
-
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
@@ -27,7 +39,7 @@ export default function Home() {
       >
         <WidthAdjust>
           <ContentBox>
-            <DailyFeed />
+            <DailyFeed isMobile={isMobile} />
           </ContentBox>
         </WidthAdjust>
       </Layout>
@@ -39,7 +51,7 @@ export default function Home() {
       >
         <WidthAdjust>
           <ContentBox>
-            <Delivery />
+            <Delivery isMobile={isMobile} />
           </ContentBox>
         </WidthAdjust>
       </Layout>
@@ -47,11 +59,11 @@ export default function Home() {
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'120vh'}
+        mobileHeight={'1000px'}
       >
         <WidthAdjust>
           <ContentBox>
-            <AfterRead />
+            <AfterRead isMobile={isMobile} />
           </ContentBox>
         </WidthAdjust>
       </Layout>
@@ -69,4 +81,19 @@ export default function Home() {
       </Layout>
     </div>
   );
-}
+};
+
+Index.getInitialProps = async (ctx: NextPageContext) => {
+  let mobile;
+
+  if (ctx.req) {
+    const md = new MobileDetect(ctx.req.headers['user-agent']);
+    mobile = !!md.mobile();
+  } else {
+    mobile = isMobile;
+  }
+
+  return { isMobile: mobile };
+};
+
+export default Index;

@@ -1,19 +1,23 @@
 import { useState, useEffect } from 'react';
 
-export default function useWindowSize(): {
-  width: number | undefined;
+export default function useWindowSize(
+  isMobile: boolean
+): {
+  width: number;
   height: number | undefined;
 } {
   const isClient = typeof window === 'object';
 
-  function getSize() {
+  function getSize(isMobile) {
+    let initData = isMobile ? 350 : 1280;
+    console.log(initData);
     return {
-      width: isClient ? window.innerWidth : undefined,
+      width: isClient ? window.innerWidth : initData,
       height: isClient ? window.innerHeight : undefined,
     };
   }
 
-  const [windowSize, setWindowSize] = useState(getSize);
+  const [windowSize, setWindowSize] = useState(getSize(isMobile));
 
   useEffect(() => {
     if (!isClient) {
@@ -21,7 +25,7 @@ export default function useWindowSize(): {
     }
 
     function handleResize() {
-      setWindowSize(getSize());
+      setWindowSize(getSize(isMobile));
     }
 
     window.addEventListener('resize', handleResize);

@@ -19,7 +19,7 @@ export default function useFeature(): {
   }
 
   function returnUpdateFeature() {
-    console.log(featureData);
+    //console.log(featureData);
     return featureData;
   }
 

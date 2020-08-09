@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContentHeader from '../molecule/ContentHeader';
 import FeatureChange from '../molecule/FeatureChange';
 import styled from 'styled-components';
 import ChangeableText from '../atom/ChangeableText';
 import useFeature from '../../utils/useFeature';
 import MockupDeviceWrapper from '../organism/MockupWrapper';
-import useWindowSize from '../../utils/useWindowSize';
 
-type Props = {};
+type Props = { isMobile: boolean };
 
 const DaliyFeedWrapper = styled.div`
   width: 100%;
@@ -28,18 +27,17 @@ const ContentArea = styled.div`
   }
 `;
 
-const DailyFeed: React.FC<Props> = () => {
-  const { width = 0 } = useWindowSize();
-
+const DailyFeed: React.FC<Props> = ({ isMobile }) => {
   const imagePathList = [
     '/mobile-bookoftoday.png',
     '/mobile-collection.png',
     '/mobile-readerspick.png',
   ];
   const { feature, featureBooleanList, changeFeature } = useFeature();
+
   return (
     <DaliyFeedWrapper>
-      {width < 784 ? (
+      {isMobile && (
         <div className="test">
           <ContentHeader
             firstLine={'한권을 읽더라도'}
@@ -47,8 +45,6 @@ const DailyFeed: React.FC<Props> = () => {
             subText={'데일리 피드'}
           />
         </div>
-      ) : (
-        <></>
       )}
       <MockupDeviceWrapper
         imagePath={imagePathList[feature]}
@@ -56,9 +52,7 @@ const DailyFeed: React.FC<Props> = () => {
         right={'none'}
       />
       <ContentArea>
-        {width < 784 ? (
-          <></>
-        ) : (
+        {!isMobile && (
           <ContentHeader
             firstLine={'한권을 읽더라도'}
             secondLine={'좋은책을 읽도록'}
