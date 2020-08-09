@@ -18,7 +18,7 @@ const DeliveryWrapper = styled.div`
 
 const ContentArea = styled.div`
   margin-top: 150px;
-  margin-left: 40px;
+  margin-left: 60px;
 
   @media (max-width: 768px) {
     margin: 0;

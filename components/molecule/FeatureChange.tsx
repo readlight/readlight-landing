@@ -5,12 +5,12 @@ import { FeatureList } from '../../types/FeatureList';
 
 const FeatureChangeWrapper = styled.div`
   margin-top: 70px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 0;
 
   @media (max-width: 768px) {
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     text-align: center;
   }
 `;

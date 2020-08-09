@@ -34,10 +34,11 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
         </NavbarWrapper>
         <MainBannerContent isMobile={isMobile} />
       </ImageWrapper>
+
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'100vh'}
+        mobileHeight={'95vh'}
       >
         <WidthAdjust>
           <ContentBox>
@@ -49,7 +50,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
       <Layout
         isBackgroundGray={true}
         desktopHeight={'100vh'}
-        mobileHeight={'100vh'}
+        mobileHeight={'95vh'}
       >
         <WidthAdjust>
           <ContentBox>
@@ -61,7 +62,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'1200px'}
+        mobileHeight={'1100px'}
       >
         <WidthAdjust>
           <ContentBox>
@@ -72,15 +73,6 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
 
       <Layout
         isBackgroundGray={true}
-        desktopHeight={'100vh'}
-        mobileHeight={'100vh'}
-      >
-        <WidthAdjust>
-          <ContentBox>하하</ContentBox>
-        </WidthAdjust>
-      </Layout>
-      <Layout
-        isBackgroundGray={false}
         desktopHeight={'100vh'}
         mobileHeight={'120vh'}
       >

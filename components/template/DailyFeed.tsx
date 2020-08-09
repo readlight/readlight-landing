@@ -20,7 +20,7 @@ const DaliyFeedWrapper = styled.div`
 
 const ContentArea = styled.div`
   margin-top: 130px;
-  margin-right: 150px;
+  margin-right: 170px;
 
   @media (max-width: 768px) {
     margin: 0;
@@ -40,22 +40,22 @@ const DailyFeed: React.FC<Props> = ({ isMobile }) => {
       {isMobile && (
         <div className="test">
           <ContentHeader
-            firstLine={'한권을 읽더라도'}
-            secondLine={'좋은책을 읽도록'}
+            firstLine={'매일마다 바뀌는'}
+            secondLine={'나만의 도서추천'}
             subText={'데일리 피드'}
           />
         </div>
       )}
       <MockupDeviceWrapper
         imagePath={imagePathList[feature]}
-        left={'-70px'}
+        left={'-50px'}
         right={'none'}
       />
       <ContentArea>
         {!isMobile && (
           <ContentHeader
-            firstLine={'한권을 읽더라도'}
-            secondLine={'좋은책을 읽도록'}
+            firstLine={'매일마다 바뀌는'}
+            secondLine={'나만의 도서추천'}
             subText={'데일리 피드'}
           />
         )}

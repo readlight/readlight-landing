@@ -15,13 +15,26 @@ const InlineText = styled.span`
     text-align: center;
   }
 `;
+
+const TextWrapper = styled.div`
+  @media (max-width: 768px) {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
 const ChangeableText = ({ feature }: Props) => {
-  const textData = ['안녕하세요', '반갑습니다 가나다라마바사', '오예'];
+  const textData = [
+    '하루 3권, 인공지능이 당신의 독서 취향을 분석해 책을 추천해줍니다.',
+    '리드라이트 큐레이터들이 최근의 이슈나 트렌드에 맞는 책들을 엄선해 제공합니다.',
+    '큐레이터가 어떤 책에 대해 다양한 사람들과 함께 작성한 칼럼을 제공합니다.',
+  ];
   return (
     <InlineText>
-      <div>
+      <TextWrapper>
         <SmallText>{textData[feature]}</SmallText>
-      </div>
+      </TextWrapper>
     </InlineText>
   );
 };

@@ -30,17 +30,15 @@ const AfterReadContentWrapper = styled.div`
   }
 `;
 
-const AfterReadContent = ({ isActive, imagePath }) => {
+const AfterReadContent = ({ isActive, imagePath, children }) => {
   return (
     <AfterReadContentWrapper>
       <ImageCover isActive={isActive}>
         <ImageWrapper imagePath={imagePath} />
       </ImageCover>
-      <ActiveSmallText isActive={isActive}>
-        이렇고 저렇고
-        <br />
-        가나다라마바사
-      </ActiveSmallText>
+      <div style={{ width: '100%' }}>
+        <ActiveSmallText isActive={isActive}>{children}</ActiveSmallText>
+      </div>
     </AfterReadContentWrapper>
   );
 };
