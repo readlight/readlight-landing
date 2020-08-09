@@ -29,7 +29,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
     <div className="container">
       <ImageWrapper desktopHeight={'100vh'} mobileHeight={'100vh'}>
         <NavbarWrapper>
-          <Navbar />
+          <Navbar isMobile={isMobile} />
         </NavbarWrapper>
       </ImageWrapper>
       <Layout

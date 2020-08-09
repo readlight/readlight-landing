@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import NavTextButton from '../atom/NavTextButton';
 import LargeActionButton from '../atom/LargeActionButton';
-import useWindowSize from '../../utils/useWindowSize';
 
 const NavListWrapper = styled.div`
   overflow: hidden;
@@ -15,12 +14,10 @@ const NavListWrapper = styled.div`
   height: 100%;
 `;
 
-const NavButtonList = () => {
-  const { width } = useWindowSize();
-
+const NavButtonList = ({ isMobile }) => {
   return (
     <NavListWrapper>
-      {width < 768 ? (
+      {isMobile ? (
         <img src="/bars-solid.svg" style={{ height: '25px' }} />
       ) : (
         <>
