@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import { NextPage, NextPageContext } from 'next';
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
@@ -14,7 +12,6 @@ import AfterRead from '../components/template/AfterRead';
 import MobileDetect from 'mobile-detect';
 import { isMobile } from 'react-device-detect';
 import { useEffect } from 'react';
-import useDeviceDetect from '../utils/useDeviceDetect';
 import MainBannerContent from '../components/molecule/MainBannerContent';
 
 interface IProps {
@@ -62,7 +59,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'1100px'}
+        mobileHeight={'1200px'}
       >
         <WidthAdjust>
           <ContentBox>

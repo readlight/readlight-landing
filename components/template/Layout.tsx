@@ -26,7 +26,6 @@ const HeightHandler = styled.div<HeightHandlerProps>`
   @media (max-width: 768px) {
     height: ${(props) => props.mobileHeight};
     min-height: 720px;
-    color: red;
   }
 `;
 

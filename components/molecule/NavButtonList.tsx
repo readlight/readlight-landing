@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import NavTextButton from '../atom/NavTextButton';
 import LargeActionButton from '../atom/LargeActionButton';
@@ -15,20 +15,20 @@ const NavListWrapper = styled.div`
 `;
 
 const NavButtonList = ({ isMobile, scrollPosition }) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const switchClicked = () => {
+    setIsClicked(!isClicked);
+  };
+
   return (
     <NavListWrapper>
-      {isMobile ? (
-        <img src="/bars-solid.svg" style={{ height: '25px' }} />
-      ) : (
-        <>
-          <NavTextButton buttonText={'회사 소개'} targetPath={'/company'} />
-          <NavTextButton buttonText={'자주 묻는 질문'} targetPath={'/faq'} />
-          <LargeActionButton
-            buttonText={'펀딩하기'}
-            scrollPosition={scrollPosition}
-          />
-        </>
-      )}
+      <NavTextButton buttonText={'회사 소개'} targetPath={'/company'} />
+      <NavTextButton buttonText={'자주 묻는 질문'} targetPath={'/faq'} />
+      <LargeActionButton
+        buttonText={'펀딩하기'}
+        scrollPosition={scrollPosition}
+      />
     </NavListWrapper>
   );
 };
