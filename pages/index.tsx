@@ -59,7 +59,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'1200px'}
+        mobileHeight={'1100px'}
       >
         <WidthAdjust>
           <ContentBox>
@@ -71,7 +71,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
       <Layout
         isBackgroundGray={true}
         desktopHeight={'100vh'}
-        mobileHeight={'120vh'}
+        mobileHeight={'900px'}
       >
         <WidthAdjust>
           <ContentBox>

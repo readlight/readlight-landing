@@ -64,11 +64,12 @@ const AfterReadCase = ({
             onEnter={onEnterViewport}
             onExit={onExitViewport}
           >
+            {/*
             <MoreInformation
               buttonText={'자세히 알아보기'}
               targetPath={targetPath}
               isActive={isActive}
-            />
+            />*/}
           </ScrollTriggerWrapper>
         </AfterReadCaseWrapper>
       ) : (
@@ -79,11 +80,12 @@ const AfterReadCase = ({
           <AfterReadContent isActive={isActive} imagePath={imagePath}>
             {text}
           </AfterReadContent>
-          <MoreInformation
-            buttonText={'자세히 알아보기'}
-            targetPath={targetPath}
-            isActive={isActive}
-          />
+          {/*
+            <MoreInformation
+              buttonText={'자세히 알아보기'}
+              targetPath={targetPath}
+              isActive={isActive}
+            />*/}
         </AfterReadCaseWrapper>
       )}
     </>

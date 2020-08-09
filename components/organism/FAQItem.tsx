@@ -11,7 +11,7 @@ type Props = {
 };
 
 const FAQWrapper = styled.div`
-  background-color: white;
+  background-color: ${(props) => (props.isSelected ? '#f7f8fa' : 'white')};
   transition: background-color 230ms ease-in-out;
   border-bottom: 1.5px solid #f7f8fa;
 
@@ -59,6 +59,7 @@ const FAQItem = ({
           changeFaq(index);
         }
       }}
+      isSelected={index == faqIndex}
     >
       <TextWrapper>
         <QuestionText>Q. {title}</QuestionText>
