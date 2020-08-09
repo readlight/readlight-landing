@@ -5,6 +5,7 @@ import LogoButton from '../atom/LogoButton';
 import useScrollEvent from '../../utils/useScrollEvent';
 import NavTextButton from '../atom/NavTextButton';
 import LargeActionButton from '../atom/LargeActionButton';
+import LinkToNotion from '../atom/LinkToNotion';
 
 type Props = { isMobile: boolean };
 
@@ -77,10 +78,7 @@ const Navbar: React.FC<Props> = ({ isMobile }) => {
 
       {isMobile && (
         <ReactiveNav isClicked={isClicked} scrollPosition={scrollPosition}>
-          <NavTextButton
-            buttonText={'회사 소개'}
-            targetPath={'https://google.com'}
-          />
+          <LinkToNotion buttonText={'회사 소개'} />
           <NavTextButton buttonText={'자주 묻는 질문'} targetPath={'/faq'} />
           <LargeActionButton
             buttonText={'펀딩하기'}

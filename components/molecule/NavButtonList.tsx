@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import NavTextButton from '../atom/NavTextButton';
 import LargeActionButton from '../atom/LargeActionButton';
+import LinkToNotion from '../atom/LinkToNotion';
 
 const NavListWrapper = styled.div`
   overflow: hidden;
@@ -23,7 +24,7 @@ const NavButtonList = ({ isMobile, scrollPosition }) => {
 
   return (
     <NavListWrapper>
-      <NavTextButton buttonText={'회사 소개'} targetPath={'/company'} />
+      <LinkToNotion buttonText={'회사 소개'} />
       <NavTextButton buttonText={'자주 묻는 질문'} targetPath={'/faq'} />
       <LargeActionButton
         buttonText={'펀딩하기'}
