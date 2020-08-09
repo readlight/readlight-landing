@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import { NextPage, NextPageContext } from 'next';
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
@@ -14,7 +12,7 @@ import AfterRead from '../components/template/AfterRead';
 import MobileDetect from 'mobile-detect';
 import { isMobile } from 'react-device-detect';
 import { useEffect } from 'react';
-import useDeviceDetect from '../utils/useDeviceDetect';
+import MainBannerContent from '../components/molecule/MainBannerContent';
 
 interface IProps {
   isMobile: boolean;
@@ -27,15 +25,15 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
 
   return (
     <div className="container">
-      <ImageWrapper desktopHeight={'100vh'} mobileHeight={'100vh'}>
-        <NavbarWrapper>
-          <Navbar isMobile={isMobile} />
-        </NavbarWrapper>
+      <ImageWrapper desktopHeight={'100vh'} mobileHeight={'98vh'}>
+        <NavbarWrapper isMobile={isMobile} />
+        <MainBannerContent isMobile={isMobile} />
       </ImageWrapper>
+
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'100vh'}
+        mobileHeight={'95vh'}
       >
         <WidthAdjust>
           <ContentBox>
@@ -47,7 +45,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
       <Layout
         isBackgroundGray={true}
         desktopHeight={'100vh'}
-        mobileHeight={'100vh'}
+        mobileHeight={'95vh'}
       >
         <WidthAdjust>
           <ContentBox>
@@ -59,7 +57,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
       <Layout
         isBackgroundGray={false}
         desktopHeight={'100vh'}
-        mobileHeight={'1000px'}
+        mobileHeight={'1100px'}
       >
         <WidthAdjust>
           <ContentBox>
@@ -71,16 +69,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
       <Layout
         isBackgroundGray={true}
         desktopHeight={'100vh'}
-        mobileHeight={'100vh'}
-      >
-        <WidthAdjust>
-          <ContentBox>하하</ContentBox>
-        </WidthAdjust>
-      </Layout>
-      <Layout
-        isBackgroundGray={false}
-        desktopHeight={'100vh'}
-        mobileHeight={'120vh'}
+        mobileHeight={'900px'}
       >
         <WidthAdjust>
           <ContentBox>

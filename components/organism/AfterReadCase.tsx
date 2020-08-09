@@ -3,7 +3,6 @@ import { useState } from 'react';
 import AfterReadContent from '../molecule/AfterReadContent';
 import ActiveHeaderBox from '../molecule/ActiveHeaderBox';
 import MoreInformation from '../atom/MoreInformationButton';
-import useScrollEvent from '../../utils/useScrollEvent';
 import ScrollTrigger from 'react-scroll-trigger';
 
 type Props = {
@@ -12,12 +11,14 @@ type Props = {
   targetPath: string;
   imagePath: string;
   isMobile: boolean;
+  text: React.ReactNode;
 };
 
 const AfterReadCaseWrapper = styled.div`
+  width: 48%;
   @media (max-width: 768px) {
     width: 90%;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 `;
 
@@ -29,6 +30,7 @@ const AfterReadCase = ({
   targetPath,
   imagePath,
   isMobile,
+  text,
 }: Props) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -55,16 +57,19 @@ const AfterReadCase = ({
           <ActiveHeaderBox subText={subText} isActive={isActive}>
             {children}
           </ActiveHeaderBox>
-          <AfterReadContent isActive={isActive} imagePath={imagePath} />
+          <AfterReadContent isActive={isActive} imagePath={imagePath}>
+            {text}
+          </AfterReadContent>
           <ScrollTriggerWrapper
             onEnter={onEnterViewport}
             onExit={onExitViewport}
           >
+            {/*
             <MoreInformation
               buttonText={'자세히 알아보기'}
               targetPath={targetPath}
               isActive={isActive}
-            />
+            />*/}
           </ScrollTriggerWrapper>
         </AfterReadCaseWrapper>
       ) : (
@@ -72,12 +77,15 @@ const AfterReadCase = ({
           <ActiveHeaderBox subText={subText} isActive={isActive}>
             {children}
           </ActiveHeaderBox>
-          <AfterReadContent isActive={isActive} imagePath={imagePath} />
-          <MoreInformation
-            buttonText={'자세히 알아보기'}
-            targetPath={targetPath}
-            isActive={isActive}
-          />
+          <AfterReadContent isActive={isActive} imagePath={imagePath}>
+            {text}
+          </AfterReadContent>
+          {/*
+            <MoreInformation
+              buttonText={'자세히 알아보기'}
+              targetPath={targetPath}
+              isActive={isActive}
+            />*/}
         </AfterReadCaseWrapper>
       )}
     </>

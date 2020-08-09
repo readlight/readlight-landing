@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import NavTextButton from '../atom/NavTextButton';
 import LargeActionButton from '../atom/LargeActionButton';
+import LinkToNotion from '../atom/LinkToNotion';
 
 const NavListWrapper = styled.div`
   overflow: hidden;
@@ -14,22 +15,25 @@ const NavListWrapper = styled.div`
   height: 100%;
 `;
 
-const NavButtonList = ({ isMobile }) => {
+const NavButtonList = ({ isMobile, scrollPosition, isScrolled }) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const switchClicked = () => {
+    setIsClicked(!isClicked);
+  };
+
   return (
     <NavListWrapper>
-      {isMobile ? (
-        <img src="/bars-solid.svg" style={{ height: '25px' }} />
-      ) : (
-        <>
-          <NavTextButton buttonText={'회사 소개'} targetPath={'/company'} />
-          <NavTextButton
-            buttonText={'자주 묻는 질문'}
-            targetPath={'/question'}
-          />
-          <NavTextButton buttonText={'뭔가 하나만더'} targetPath={'/more'} />
-          <LargeActionButton buttonText={'펀딩하기'} />
-        </>
-      )}
+      <LinkToNotion buttonText={'회사 소개'} isScrolled={isScrolled} />
+      <NavTextButton
+        buttonText={'자주 묻는 질문'}
+        targetPath={'/faq'}
+        isScrolled={isScrolled}
+      />
+      <LargeActionButton
+        buttonText={'펀딩하기'}
+        scrollPosition={scrollPosition}
+      />
     </NavListWrapper>
   );
 };

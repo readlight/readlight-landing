@@ -8,12 +8,12 @@ const ScrennBox = styled.div`
   position: absolute;
   width: 273px;
   height: 594px;
-  left: 121px;
+  left: 122px;
   top: 82px;
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    width: 216px;
+    width: 220px;
     left: -9999px;
     right: -9999px;
     margin: 0 auto;
