@@ -23,17 +23,23 @@ const AfterReadCaseWrapper = styled.div`
 
 const ScrollTriggerWrapper: any = ScrollTrigger;
 
-const AfterReadCase = ({ subText, children, targetPath, imagePath }: Props) => {
-  const [visible, setVisible] = useState(false);
+const AfterReadCase = ({
+  subText,
+  children,
+  targetPath,
+  imagePath,
+  isMobile,
+}: Props) => {
+  const [isActive, setIsActive] = useState(false);
 
   const onEnterViewport = () => {
-    setVisible(true);
+    setIsActive(true);
   };
 
   const onExitViewport = () => {
-    setVisible(false);
+    console.log('exit');
+    setIsActive(false);
   };
-  const [isActive, setIsActive] = useState(false);
 
   const activate = () => {
     setIsActive(true);
@@ -44,19 +50,38 @@ const AfterReadCase = ({ subText, children, targetPath, imagePath }: Props) => {
   };
 
   return (
-    <ScrollTriggerWrapper onEnter={onEnterViewport} onExit={onExitViewport}>
-      <AfterReadCaseWrapper onMouseEnter={activate} onMouseLeave={deactivate}>
-        <ActiveHeaderBox subText={subText} isActive={isActive}>
-          {children}
-        </ActiveHeaderBox>
-        <AfterReadContent isActive={isActive} imagePath={imagePath} />
-        <MoreInformation
-          buttonText={'자세히 알아보기'}
-          targetPath={targetPath}
-          isActive={isActive}
-        />
-      </AfterReadCaseWrapper>
-    </ScrollTriggerWrapper>
+    <>
+      {isMobile ? (
+        <AfterReadCaseWrapper onMouseEnter={activate} onMouseLeave={deactivate}>
+          <ActiveHeaderBox subText={subText} isActive={isActive}>
+            {children}
+          </ActiveHeaderBox>
+          <AfterReadContent isActive={isActive} imagePath={imagePath} />
+          <ScrollTriggerWrapper
+            onEnter={onEnterViewport}
+            onExit={onExitViewport}
+          >
+            <MoreInformation
+              buttonText={'자세히 알아보기'}
+              targetPath={targetPath}
+              isActive={isActive}
+            />
+          </ScrollTriggerWrapper>
+        </AfterReadCaseWrapper>
+      ) : (
+        <AfterReadCaseWrapper onMouseEnter={activate} onMouseLeave={deactivate}>
+          <ActiveHeaderBox subText={subText} isActive={isActive}>
+            {children}
+          </ActiveHeaderBox>
+          <AfterReadContent isActive={isActive} imagePath={imagePath} />
+          <MoreInformation
+            buttonText={'자세히 알아보기'}
+            targetPath={targetPath}
+            isActive={isActive}
+          />
+        </AfterReadCaseWrapper>
+      )}
+    </>
   );
 };
 
