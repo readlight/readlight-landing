@@ -12,6 +12,7 @@ const FeatureList = styled.div`
   margin-top: 80px;
 
   @media (max-width: 768px) {
+    margin-top: 60px;
     align-items: center;
     justify-content: center;
   }

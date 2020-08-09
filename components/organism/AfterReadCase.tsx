@@ -37,7 +37,6 @@ const AfterReadCase = ({
   };
 
   const onExitViewport = () => {
-    console.log('exit');
     setIsActive(false);
   };
 
