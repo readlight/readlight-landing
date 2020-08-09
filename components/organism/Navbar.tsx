@@ -7,7 +7,7 @@ import NavTextButton from '../atom/NavTextButton';
 import LargeActionButton from '../atom/LargeActionButton';
 import LinkToNotion from '../atom/LinkToNotion';
 
-type Props = { isMobile: boolean };
+type Props = { isMobile: boolean; changeClicked: () => void };
 
 const NavbarContentWrapper = styled.div`
   position: relative;
@@ -36,8 +36,7 @@ const ReactiveNav = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  background-color: ${(props) =>
-    props.scrollPosition > 2 ? 'white' : 'transparent'};
+  background-color: ${(props) => (props.isClicked ? 'white' : 'transparent')};
   opacity: ${(props) => (props.isClicked ? '1.0' : '0')};
   transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out;
   padding: 0 20px;
@@ -47,12 +46,13 @@ const ReactiveNav = styled.div`
   align-items: center;
 `;
 
-const Navbar: React.FC<Props> = ({ isMobile }) => {
+const Navbar: React.FC<Props> = ({ isMobile, changeClicked }) => {
   const { scrollPosition, scrollDirection } = useScrollEvent();
   const [isClicked, setIsClicked] = useState(false);
 
   const switchClicked = () => {
     setIsClicked(!isClicked);
+    changeClicked();
   };
 
   return (
@@ -71,6 +71,7 @@ const Navbar: React.FC<Props> = ({ isMobile }) => {
             <NavButtonList
               scrollPosition={scrollPosition}
               isMobile={isMobile}
+              isScrolled={scrollPosition > 2}
             />
           )}
         </FlexWrapper>
@@ -78,8 +79,12 @@ const Navbar: React.FC<Props> = ({ isMobile }) => {
 
       {isMobile && (
         <ReactiveNav isClicked={isClicked} scrollPosition={scrollPosition}>
-          <LinkToNotion buttonText={'회사 소개'} />
-          <NavTextButton buttonText={'자주 묻는 질문'} targetPath={'/faq'} />
+          <LinkToNotion buttonText={'회사 소개'} isScrolled={true} />
+          <NavTextButton
+            buttonText={'자주 묻는 질문'}
+            targetPath={'/faq'}
+            isScrolled={true}
+          />
           <LargeActionButton
             buttonText={'펀딩하기'}
             scrollPosition={scrollPosition}

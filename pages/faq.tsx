@@ -26,9 +26,7 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
         desktopHeight={'100vh'}
         mobileHeight={'100vh'}
       >
-        <NavbarWrapper>
-          <Navbar isMobile={isMobile} />
-        </NavbarWrapper>
+        <NavbarWrapper isMobile={isMobile} />
         <FAQ />
       </Layout>
     </div>
