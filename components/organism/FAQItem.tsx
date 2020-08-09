@@ -29,6 +29,10 @@ const QuestionText = styled.span`
   user-select: none;
   font-size: 20px;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const AnswerWrapper = styled.div`
@@ -40,6 +44,10 @@ const AnswerText = styled.span`
   user-select: none;
   font-size: 18px;
   font-weight: normal;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const FAQItem = ({

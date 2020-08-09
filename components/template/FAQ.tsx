@@ -3,6 +3,7 @@ import ActiveHeader from '../atom/ActiveHeader';
 import WidthAdjust from '../template/WidthAdjust';
 import FAQItem from '../organism/FAQItem';
 import useFaq from '../../utils/useFaq';
+import { url } from 'inspector';
 
 const faqData = [
   {
@@ -40,19 +41,38 @@ const FaqWrapper = styled.div`
   padding-top: 250px;
   padding-bottom: 10px;
   padding-left: 0px;
+
+  margin-left: 20px;
+  @media (max-width: 768px) {
+    margin-left: 20px;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  background-image: url('/faqimage.jpg');
+  background-position: center center;
+  background-size: cover;
+`;
+
+const HeaderStyle = styled.h1`
+  color: white;
+  user-select: none;
+
+  @media (max-width: 768px) {
+  }
 `;
 
 const FAQ = () => {
   const { faqIndex, changeFaq } = useFaq();
   return (
     <>
-      <div style={{ background: 'rgb(14 97 255 / 18%)' }}>
+      <ImageWrapper>
         <WidthAdjust>
           <FaqWrapper>
-            <ActiveHeader isActive={true}>자주 묻는 질문</ActiveHeader>
+            <HeaderStyle>자주 묻는 질문</HeaderStyle>
           </FaqWrapper>
         </WidthAdjust>
-      </div>
+      </ImageWrapper>
       <div>
         <WidthAdjust>
           <div style={{ marginTop: '20px' }}>

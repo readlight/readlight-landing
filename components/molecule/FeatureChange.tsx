@@ -33,7 +33,7 @@ const NavButtonList = ({ feature, featureBooleanList, changeFeature }) => {
         changeFeature={changeFeature}
       />
       <FeatureTextButton
-        buttonText={'리더스픽'}
+        buttonText={'북칼럼'}
         isSelected={featureBooleanList[2]}
         featureType={FeatureList.READERSPICK}
         changeFeature={changeFeature}
