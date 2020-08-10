@@ -47,9 +47,8 @@ const LargeActionButton: React.FC<Props> = ({ buttonText, scrollPosition }) => {
         {buttonText}
         <Emoji
           symbol="🙌"
-          label="sheep"
-          paddingLeft={'6px'}
-          paddingRight={'0'}
+          label="rasing hands"
+          padding={'6px 0px 0px 0px'}
           emojiSize={'20px'}
         />
       </ActionButton>

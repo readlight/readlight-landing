@@ -23,6 +23,17 @@ export default class CustomDocument extends Document<DocumentProps> {
     return { ...page, styleTags };
   }
 
+  setGoogleTag() {
+    return {
+      __html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-169802119-1')`,
+    };
+  }
+
   public render() {
     const { styleTags } = this.props;
     return (
