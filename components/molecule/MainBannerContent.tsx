@@ -69,7 +69,15 @@ const MainBannerContent = ({ isMobile }) => {
         <PaddingGiver>
           <QuickHeader isActive={true}>택배로 빌리는 무제한 종이책</QuickHeader>
           <QuickHeader isActive={true}>리드라이트</QuickHeader>
-          {!isMobile && <FundingButton>지금 펀딩하기</FundingButton>}
+          {!isMobile && (
+            <FundingButton
+              onClick={() => {
+                window.open('https://otrade.co/contest/60/1242');
+              }}
+            >
+              지금 펀딩하기
+            </FundingButton>
+          )}
         </PaddingGiver>
       </MainBannerContentWrapper>
       {isMobile && <FundingButton>지금 펀딩하기</FundingButton>}

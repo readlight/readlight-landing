@@ -38,7 +38,12 @@ const ActionButton = styled.button`
 const LargeActionButton: React.FC<Props> = ({ buttonText, scrollPosition }) => {
   return (
     <ButtonExpandArea>
-      <ActionButton scrollPosition={scrollPosition}>
+      <ActionButton
+        scrollPosition={scrollPosition}
+        onClick={() => {
+          window.open('https://otrade.co/contest/60/1242');
+        }}
+      >
         {buttonText}
         <Emoji
           symbol="🙌"
