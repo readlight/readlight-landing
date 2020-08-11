@@ -18,7 +18,6 @@ const Emoji = ({ padding, emojiSize, symbol, label }: Props) => (
     className="emoji"
     role="img"
     aria-label={label ? label : ''}
-    aria-hidden={label ? 'false' : 'true'}
     padding={padding}
     emojiSize={emojiSize}
   >
