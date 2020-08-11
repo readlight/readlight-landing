@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import styled from 'styled-components';
 
 type Props = { children: React.ReactNode; isActive: boolean };
