@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import AfterReadContent from '../molecule/AfterReadContent';
 import ActiveHeaderBox from '../molecule/ActiveHeaderBox';
-import MoreInformation from '../atom/MoreInformationButton';
 import ScrollTrigger from 'react-scroll-trigger';
 
 type Props = {

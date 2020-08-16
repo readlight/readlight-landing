@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SmallText from './SmallText';
-import useFeature from '../../utils/useFeature';
 import { FeatureList } from '../../types/FeatureList';
 
 type Props = {
