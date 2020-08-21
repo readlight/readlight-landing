@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import SmallText from './SmallText';
 import { FeatureList } from '../../types/FeatureList';
 
-type Props = {
+interface IProps {
   feature: FeatureList;
-};
+}
 
 const InlineText = styled.span`
   color: ${({ theme }) => theme.colors.pureBlack};
@@ -23,7 +23,7 @@ const TextWrapper = styled.div`
   }
 `;
 
-const ChangeableText = ({ feature }: Props) => {
+const ChangeableText = ({ feature }: IProps) => {
   const textData = [
     '하루 한권, 인공지능이 당신의 독서 취향을 분석해 책을 추천해줍니다.',
     '리드라이트 큐레이터들이 최근의 이슈나 트렌드에 맞는 책들을 엄선해 제공합니다.',
