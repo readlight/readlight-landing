@@ -22,6 +22,6 @@
     "@types/react": "^16.9.46",
     "babel-plugin-styled-components": "^1.11.1",
     "styled-components": "^5.1.1",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.2"
   }
 }
