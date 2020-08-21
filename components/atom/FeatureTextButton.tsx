@@ -2,15 +2,19 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { FeatureList } from '../../types/FeatureList';
 
-type Props = {
+interface IProps {
   buttonText: string;
   isSelected: boolean;
   featureType: FeatureList;
   changeFeature: Function;
-};
+}
+
+interface NavText {
+  isSelected: boolean;
+}
 
 const NavText = styled.span`
-  color: ${(props) => (props.isSelected ? '#0E62FF' : '#C6C6C6')};
+  color: ${(props: NavText) => (props.isSelected ? '#0E62FF' : '#C6C6C6')};
   font-size: 20px;
   font-weight: ${(props) => (props.isSelected ? 'bold' : 'bold')};
   border-bottom: ${(props) =>
@@ -29,12 +33,12 @@ const NavText = styled.span`
   }
 `;
 
-const FeatureTextButton: React.FC<Props> = ({
+const FeatureTextButton = ({
   buttonText,
   isSelected,
   featureType,
   changeFeature,
-}) => {
+}: IProps) => {
   return (
     <NavText
       onClick={() => {
