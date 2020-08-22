@@ -1,8 +1,11 @@
+import * as React from 'react';
 import styled from 'styled-components';
 
 import AfterReadCase from '../organism/AfterReadCase';
 
-type Props = { isMobile: boolean };
+interface IProps {
+  isMobile: boolean;
+}
 
 const AfterReadWrapper = styled.div`
   width: 100%;
@@ -17,7 +20,7 @@ const AfterReadWrapper = styled.div`
   }
 `;
 
-const AfterRead = ({ isMobile }: Props) => {
+const AfterRead = ({ isMobile }: IProps) => {
   return (
     <AfterReadWrapper>
       <AfterReadCase

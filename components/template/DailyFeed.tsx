@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import ContentHeader from '../molecule/ContentHeader';
 import FeatureChange from '../molecule/FeatureChange';
 import styled from 'styled-components';
@@ -6,7 +6,9 @@ import ChangeableText from '../atom/ChangeableText';
 import useFeature from '../../utils/useFeature';
 import MockupDeviceWrapper from '../organism/MockupWrapper';
 
-type Props = { isMobile: boolean };
+interface IProps {
+  isMobile: boolean;
+}
 
 const DaliyFeedWrapper = styled.div`
   width: 100%;
@@ -27,7 +29,7 @@ const ContentArea = styled.div`
   }
 `;
 
-const DailyFeed: React.FC<Props> = ({ isMobile }) => {
+const DailyFeed = ({ isMobile }: IProps) => {
   const imagePathList = [
     '/mobile-bookoftoday.png',
     '/mobile-collection.png',
