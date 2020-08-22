@@ -2,7 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import MockupImage from '../atom/MockupImage';
 
-type Props = { imagePath: string };
+interface IProps {
+  imagePath: string;
+}
 
 const ScrennBox = styled.div`
   position: absolute;
@@ -20,10 +22,10 @@ const ScrennBox = styled.div`
   }
 `;
 
-const MockupDeviceWrapper = ({ imagePath }: Props) => (
+const MockupImageWrapper = ({ imagePath }: IProps) => (
   <ScrennBox>
     <MockupImage path={imagePath} />
   </ScrennBox>
 );
 
-export default MockupDeviceWrapper;
+export default MockupImageWrapper;
