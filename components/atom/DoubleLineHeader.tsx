@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import ScrollTrigger from 'react-scroll-trigger';
 
 interface IProps {
-  firstLine: String;
-  secondLine: String;
+  firstLine: string;
+  secondLine: string;
 }
 
 interface IDoubleLineHeaderStyle {

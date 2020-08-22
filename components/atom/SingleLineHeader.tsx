@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ScrollTrigger from 'react-scroll-trigger';
 
 interface IProps {
-  headerText: String;
+  headerText: string;
 }
 
 interface ISingleLineHeaderStyle {
