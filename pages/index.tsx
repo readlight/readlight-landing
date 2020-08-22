@@ -27,7 +27,11 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
     <div className="container">
       <ImageWrapper desktopHeight={'100vh'} mobileHeight={'98vh'}>
         <NavbarWrapper isMobile={isMobile} />
-        <MainBannerContent isMobile={isMobile} />
+        <MainBannerContent
+          isMobile={isMobile}
+          firstLine={'택배로 빌리는 무제한 종이책'}
+          secondLine={'리드라이트'}
+        />
       </ImageWrapper>
 
       <Layout
