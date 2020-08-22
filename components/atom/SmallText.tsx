@@ -1,7 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = { children: React.ReactNode };
+interface IProps {
+  children: React.ReactNode;
+}
 
 const InlineText = styled.span`
   color: ${({ theme }) => theme.colors.pureBlack};
@@ -9,7 +11,7 @@ const InlineText = styled.span`
   @media (max-width: 768px) {
   }
 `;
-const SmallText: React.FC<Props> = ({ children }) => {
+const SmallText = ({ children }: IProps) => {
   return <InlineText>{children}</InlineText>;
 };
 
