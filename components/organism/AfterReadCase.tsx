@@ -4,14 +4,14 @@ import AfterReadContent from '../molecule/AfterReadContent';
 import ActiveHeaderBox from '../molecule/ActiveHeaderBox';
 import ScrollTrigger from 'react-scroll-trigger';
 
-type Props = {
+interface IProps {
   subText: string;
   children: React.ReactNode;
   targetPath: string;
   imagePath: string;
   isMobile: boolean;
   text: React.ReactNode;
-};
+}
 
 const AfterReadCaseWrapper = styled.div`
   width: 48%;
@@ -30,7 +30,7 @@ const AfterReadCase = ({
   imagePath,
   isMobile,
   text,
-}: Props) => {
+}: IProps) => {
   const [isActive, setIsActive] = useState(false);
 
   const onEnterViewport = () => {

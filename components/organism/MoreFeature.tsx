@@ -2,11 +2,11 @@ import IconWrapper from '../atom/IconWrapper';
 import MoreFeatureContent from '../molecule/MoreFeatureContent';
 import styled from 'styled-components';
 
-type Props = {
+interface IProps {
   headerText: string;
   iconPath: string;
   children: React.ReactNode;
-};
+}
 
 const MoreFeatureBox = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ const MoreFeatureBox = styled.div`
   }
 `;
 
-const MoreFeature: React.FC<Props> = ({ headerText, iconPath, children }) => {
+const MoreFeature = ({ headerText, iconPath, children }: IProps) => {
   return (
     <MoreFeatureBox>
       <IconWrapper iconPath={iconPath} />

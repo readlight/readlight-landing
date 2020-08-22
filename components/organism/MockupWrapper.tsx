@@ -5,12 +5,20 @@ import { useState } from 'react';
 import MockupDevice from '../atom/MockupDevice';
 import MockupImageWrapper from '../molecule/MockupImageWrapper';
 
-type Props = { imagePath: string; left: string; right: string };
+interface IProps {
+  imagePath?: string;
+  left?: string;
+  right?: string;
+}
+
+interface IMockupDeviceBox {
+  visible: boolean;
+}
 
 const PositionWrapper = styled.div`
   position: relative;
-  right: ${(props) => props.right};
-  left: ${(props) => props.left};
+  right: ${(props: IProps) => props.right};
+  left: ${(props: IProps) => props.left};
 
   @media (max-width: 768px) {
     display: flex;
@@ -24,8 +32,7 @@ const PositionWrapper = styled.div`
 
 const MockupDeviceBox = styled.div`
   visibility: visible;
-
-  opacity: ${(props) => (props.visible ? '1' : '0.3')};
+  opacity: ${(props: IMockupDeviceBox) => (props.visible ? '1' : '0.3')};
   transform: ${(props) =>
     props.visible ? 'translateY(30px)' : 'translate(0px)'};
   -webkit-transform: ${(props) =>
@@ -38,7 +45,7 @@ const MockupDeviceBox = styled.div`
 
 const ScrollTriggerWrapper: any = ScrollTrigger;
 
-const MockupWrapper = ({ imagePath, left, right }: Props) => {
+const MockupWrapper = ({ imagePath, left, right }: IProps) => {
   const [visible, setVisible] = useState(false);
 
   const onEnterViewport = () => {

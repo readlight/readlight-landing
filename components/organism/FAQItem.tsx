@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 
-type Props = {
+interface IProps {
   title: string;
   category: number;
   children: React.ReactNode;
   faqIndex: number;
   changeFaq: (faxIndex: number) => void;
   index: number;
-};
+}
+
+interface IFAQWrapper {
+  isSelected: boolean;
+}
 
 const FAQWrapper = styled.div`
-  background-color: ${(props) => (props.isSelected ? '#f7f8fa' : 'white')};
+  background-color: ${(props: IFAQWrapper) =>
+    props.isSelected ? '#f7f8fa' : 'white'};
   transition: background-color 230ms ease-in-out;
   border-bottom: 1.5px solid #f7f8fa;
 
@@ -56,7 +61,7 @@ const FAQItem = ({
   faqIndex,
   changeFaq,
   index,
-}: Props) => {
+}: IProps) => {
   return (
     <FAQWrapper
       onClick={() => {
