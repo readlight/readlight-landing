@@ -4,6 +4,10 @@ import NavTextButton from '../atom/NavTextButton';
 import LargeActionButton from '../atom/LargeActionButton';
 import LinkToNotion from '../atom/LinkToNotion';
 
+interface IProps {
+  isScrolled: boolean;
+}
+
 const NavListWrapper = styled.div`
   overflow: hidden;
   text-align: right;
@@ -15,7 +19,7 @@ const NavListWrapper = styled.div`
   height: 100%;
 `;
 
-const NavButtonList = ({ isMobile, scrollPosition, isScrolled }) => {
+const NavButtonList = ({ isScrolled }: IProps) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const switchClicked = () => {
@@ -30,10 +34,7 @@ const NavButtonList = ({ isMobile, scrollPosition, isScrolled }) => {
         targetPath={'/faq'}
         isScrolled={isScrolled}
       />
-      <LargeActionButton
-        buttonText={'펀딩하기'}
-        scrollPosition={scrollPosition}
-      />
+      <LargeActionButton buttonText={'펀딩하기'} />
     </NavListWrapper>
   );
 };
