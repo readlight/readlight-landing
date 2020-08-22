@@ -8,13 +8,13 @@ interface IProps {
   secondLine: String;
 }
 
-interface DoubleLineHeaderStyle {
+interface IDoubleLineHeaderStyle {
   visible: boolean;
 }
 
 const DoubleLineHeaderStyle = styled.h1`
   color: ${({ theme }) => theme.colors.header};
-  opacity: ${(props: DoubleLineHeaderStyle) => (props.visible ? '1' : '0.3')};
+  opacity: ${(props: IDoubleLineHeaderStyle) => (props.visible ? '1' : '0.3')};
   transform: ${(props) =>
     props.visible ? 'translateY(30px)' : 'translate(0px)'};
   -webkit-transform: ${(props) =>
