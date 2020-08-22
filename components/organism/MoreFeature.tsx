@@ -1,3 +1,4 @@
+import * as React from 'react';
 import IconWrapper from '../atom/IconWrapper';
 import MoreFeatureContent from '../molecule/MoreFeatureContent';
 import styled from 'styled-components';
