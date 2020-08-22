@@ -1,7 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import FeatureTextButton from '../atom/FeatureTextButton';
 import { FeatureList } from '../../types/FeatureList';
+
+interface IProps {
+  feature: number;
+  featureBooleanList: Array<boolean>;
+  changeFeature: Function;
+}
 
 const FeatureChangeWrapper = styled.div`
   margin-top: 70px;
@@ -15,7 +21,11 @@ const FeatureChangeWrapper = styled.div`
   }
 `;
 
-const NavButtonList = ({ feature, featureBooleanList, changeFeature }) => {
+const NavButtonList = ({
+  feature,
+  featureBooleanList,
+  changeFeature,
+}: IProps) => {
   //const { feature, featureBooleanList, changeFeature } = useFeature();
 
   return (
