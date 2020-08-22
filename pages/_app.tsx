@@ -1,14 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import Head from 'next/head';
 import App from 'next/app';
 import '../styles/global.scss';
 
 import { ThemeProvider } from 'styled-components';
 
-type AppProps = {
+interface IAppProps {
   Component: React.ReactNode;
   pageProps: any;
-};
+}
 
 const theme = {
   colors: {
@@ -21,7 +21,7 @@ const theme = {
   },
 };
 
-export default class CustomApp extends App<AppProps> {
+export default class CustomApp extends App<IAppProps> {
   public render() {
     const { Component, pageProps } = this.props;
 

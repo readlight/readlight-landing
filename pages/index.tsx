@@ -1,9 +1,9 @@
+import * as React from 'react';
 import { NextPage, NextPageContext } from 'next';
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
 import NavbarWrapper from '../components/template/NavbarWrapper';
-import Navbar from '../components/organism/Navbar';
 import ImageWrapper from '../components/template/ImageWrapper';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import DailyFeed from '../components/template/DailyFeed';
