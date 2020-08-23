@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type Props = {
-  padding: string;
-  emojiSize: string;
-  symbol: any;
-  label: string;
-};
+interface IProps {
+  padding?: string;
+  emojiSize?: string;
+  symbol?: any;
+  label?: string;
+}
 
 const EmojiWrapper = styled.span`
-  padding: ${(props) => props.padding};
+  padding: ${(props: IProps) => props.padding};
   font-size: ${(props) => props.emojiSize};
 `;
 
-const Emoji = ({ padding, emojiSize, symbol, label }: Props) => (
+const Emoji = ({ padding, emojiSize, symbol, label }: IProps) => (
   <EmojiWrapper
     className="emoji"
     role="img"
