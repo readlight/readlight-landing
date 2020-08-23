@@ -2,7 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Emoji from '../../utils/Emoji';
 
-type Props = { buttonText: string; scrollPosition: number };
+interface IProps {
+  buttonText: string;
+}
 
 const ButtonExpandArea = styled.div`
   display: flex;
@@ -35,11 +37,10 @@ const ActionButton = styled.button`
   }
 `;
 
-const LargeActionButton: React.FC<Props> = ({ buttonText, scrollPosition }) => {
+const LargeActionButton = ({ buttonText }: IProps) => {
   return (
     <ButtonExpandArea>
       <ActionButton
-        scrollPosition={scrollPosition}
         onClick={() => {
           window.open('https://otrade.co/contest/60/1242');
         }}
@@ -47,9 +48,8 @@ const LargeActionButton: React.FC<Props> = ({ buttonText, scrollPosition }) => {
         {buttonText}
         <Emoji
           symbol="🙌"
-          label="sheep"
-          paddingLeft={'6px'}
-          paddingRight={'0'}
+          label="rasing hands"
+          padding={'6px 0px 0px 6px'}
           emojiSize={'20px'}
         />
       </ActionButton>

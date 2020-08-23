@@ -1,4 +1,11 @@
+import * as React from 'react';
 import styled from 'styled-components';
+
+interface IProps {
+  isMobile: boolean;
+  firstLine: string;
+  secondLine: string;
+}
 
 const MainBannerContentWrapper = styled.div`
   position: absolute;
@@ -62,13 +69,16 @@ const FundingButton = styled.button`
   }
 `;
 
-const MainBannerContent = ({ isMobile }) => {
+const MainBannerContent = ({ isMobile, firstLine, secondLine }: IProps) => {
   return (
     <>
       <MainBannerContentWrapper>
         <PaddingGiver>
-          <QuickHeader isActive={true}>택배로 빌리는 무제한 종이책</QuickHeader>
-          <QuickHeader isActive={true}>리드라이트</QuickHeader>
+          <QuickHeader>
+            {firstLine}
+            <br />
+            {secondLine}
+          </QuickHeader>
           {!isMobile && (
             <FundingButton
               onClick={() => {

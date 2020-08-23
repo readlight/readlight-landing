@@ -3,7 +3,14 @@ import styled from 'styled-components';
 import useScrollEvent from '../../utils/useScrollEvent';
 import Navbar from '../organism/Navbar';
 
-type Props = { isMobile: boolean };
+interface IProps {
+  isMobile: boolean;
+}
+
+interface INavbarBox {
+  scrollPosition: number;
+  isClicked: boolean;
+}
 
 const NavbarBox = styled.div`
   padding: 0 20px;
@@ -12,21 +19,21 @@ const NavbarBox = styled.div`
   top: 0;
   right: 0;
   left: 0;
-  background-color: ${(props) =>
-    props.isCliked || props.scrollPosition > 2 ? 'white' : 'transparent'};
+  background-color: ${(props: INavbarBox) =>
+    props.isClicked || props.scrollPosition > 2 ? 'white' : 'transparent'};
   transition: background-color 0.25s ease-in-out;
   --webkit-transform: background-color 0.25s ease-in-out;
 `;
 
-const NavbarWrapper: React.FC<Props> = ({ isMobile }) => {
+const NavbarWrapper = ({ isMobile }: IProps) => {
   const { scrollPosition, scrollDirection } = useScrollEvent();
-  const [isCliked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const changeClicked = () => {
-    setIsClicked(!isCliked);
+    setIsClicked(!isClicked);
   };
   return (
-    <NavbarBox scrollPosition={scrollPosition} isCliked={isCliked}>
+    <NavbarBox scrollPosition={scrollPosition} isClicked={isClicked}>
       <Navbar isMobile={isMobile} changeClicked={changeClicked} />
     </NavbarBox>
   );

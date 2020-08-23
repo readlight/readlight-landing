@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = {
+interface IProps {
   children: React.ReactNode;
-};
+}
 
 const ContentBoxStyle = styled.div`
   width: 100%;
@@ -16,7 +16,7 @@ const ContentBoxStyle = styled.div`
   }
 `;
 
-const ContentBox = ({ children }: Props) => (
+const ContentBox = ({ children }: IProps) => (
   <ContentBoxStyle>{children}</ContentBoxStyle>
 );
 

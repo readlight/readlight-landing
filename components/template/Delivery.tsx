@@ -1,10 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import ContentHeader from '../molecule/ContentHeader';
 import styled from 'styled-components';
 import MockupDeviceWrapper from '../organism/MockupWrapper';
 import SmallText from '../atom/SmallText';
 
-type Props = { isMobile: boolean };
+interface IProps {
+  isMobile: boolean;
+}
 
 const DeliveryWrapper = styled.div`
   width: 100%;
@@ -36,7 +38,7 @@ const MobileWrapper = styled.div`
   }
 `;
 
-const Delivery: React.FC<Props> = ({ isMobile }) => {
+const Delivery = ({ isMobile }: IProps) => {
   const imagePathList = ['/mobile-delivery.png'];
   return (
     <DeliveryWrapper>

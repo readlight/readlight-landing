@@ -1,22 +1,22 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = {
+interface IProps {
   children: React.ReactNode;
   isBackgroundGray: boolean;
   desktopHeight: string;
   mobileHeight: string;
-};
+}
 
-type HeightHandlerProps = {
+interface IHeightHandlerProps {
   isBackgroundGray: boolean;
   desktopHeight: string;
   mobileHeight: string;
-};
+}
 
-const HeightHandler = styled.div<HeightHandlerProps>`
+const HeightHandler = styled.div`
   color: ${({ theme }) => theme.colors.header};
-  height: ${(props) => props.desktopHeight};
+  height: ${(props: IHeightHandlerProps) => props.desktopHeight};
   box-sizing: border-box;
   display: box;
   background-color: ${(props) =>
@@ -34,7 +34,7 @@ const Layout = ({
   isBackgroundGray,
   desktopHeight,
   mobileHeight,
-}: Props) => (
+}: IProps) => (
   <HeightHandler
     isBackgroundGray={isBackgroundGray}
     desktopHeight={desktopHeight}

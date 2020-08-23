@@ -2,7 +2,10 @@ import SmallHeader from '../atom/SmallHeader';
 import SmallText from '../atom/SmallText';
 import styled from 'styled-components';
 
-type Props = { headerText: string; children: React.ReactNode };
+interface IProps {
+  headerText: string;
+  children: React.ReactNode;
+}
 
 const ContentWrapper = styled.div`
   margin: 12px 0 0 15px;
@@ -20,7 +23,7 @@ const SmallTextWrapper = styled.div`
   }
 `;
 
-const MoreFeatureContent: React.FC<Props> = ({ headerText, children }) => {
+const MoreFeatureContent = ({ headerText, children }: IProps) => {
   return (
     <ContentWrapper>
       <SmallHeader text={headerText} />

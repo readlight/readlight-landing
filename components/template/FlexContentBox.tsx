@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = {
+interface IProps {
   children: React.ReactNode;
 };
 
@@ -9,7 +9,7 @@ const FlexContentBoxStyle = styled.div`
   width: 100%;
 `;
 
-const FlexContentBox = ({ children }: Props) => (
+const FlexContentBox = ({ children }: IProps) => (
   <FlexContentBoxStyle>{children}</FlexContentBoxStyle>
 );
 

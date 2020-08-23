@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = {
+interface IProps {
   children: React.ReactNode;
   desktopHeight: string;
   mobileHeight: string;
-};
+}
 
 type HeightHandlerProps = {
   desktopHeight: string;
@@ -27,7 +27,7 @@ const ImageBox = styled.div<HeightHandlerProps>`
   }
 `;
 
-const ImageWrapper = ({ children, desktopHeight, mobileHeight }: Props) => (
+const ImageWrapper = ({ children, desktopHeight, mobileHeight }: IProps) => (
   <ImageBox desktopHeight={desktopHeight} mobileHeight={mobileHeight}>
     {children}
   </ImageBox>

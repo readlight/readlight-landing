@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { NextPage, NextPageContext } from 'next';
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';

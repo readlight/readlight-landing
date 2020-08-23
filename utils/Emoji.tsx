@@ -2,33 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
-  paddingLeft: string;
-  paddingRight: string;
+  padding: string;
   emojiSize: string;
   symbol: any;
   label: string;
 };
 
 const EmojiWrapper = styled.span`
-  padding-left: ${(props) => props.paddingLeft};
-  padding-right: ${(props) => props.paddingRight};
+  padding: ${(props) => props.padding};
   font-size: ${(props) => props.emojiSize};
 `;
 
-const Emoji: React.FC<Props> = ({
-  paddingLeft,
-  paddingRight,
-  emojiSize,
-  symbol,
-  label,
-}) => (
+const Emoji = ({ padding, emojiSize, symbol, label }: Props) => (
   <EmojiWrapper
     className="emoji"
     role="img"
     aria-label={label ? label : ''}
-    aria-hidden={label ? 'false' : 'true'}
-    paddingLeft={paddingLeft}
-    paddingRight={paddingRight}
+    padding={padding}
     emojiSize={emojiSize}
   >
     {symbol}

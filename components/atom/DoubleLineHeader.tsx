@@ -3,15 +3,18 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import ScrollTrigger from 'react-scroll-trigger';
 
-type Props = { firstLine: String; secondLine: String };
+interface IProps {
+  firstLine: string;
+  secondLine: string;
+}
 
-type DoubleLineHeaderStyle = {
+interface IDoubleLineHeaderStyle {
   visible: boolean;
-};
+}
 
 const DoubleLineHeaderStyle = styled.h1`
   color: ${({ theme }) => theme.colors.header};
-  opacity: ${(props) => (props.visible ? '1' : '0.3')};
+  opacity: ${(props: IDoubleLineHeaderStyle) => (props.visible ? '1' : '0.3')};
   transform: ${(props) =>
     props.visible ? 'translateY(30px)' : 'translate(0px)'};
   -webkit-transform: ${(props) =>
@@ -31,7 +34,7 @@ const DoubleLineHeaderStyle = styled.h1`
 
 const ScrollTriggerWrapper: any = ScrollTrigger;
 
-const DoubleLineHeader: React.FC<Props> = ({ firstLine, secondLine }) => {
+const DoubleLineHeader = ({ firstLine, secondLine }: IProps) => {
   const [visible, setVisible] = useState(false);
 
   const onEnterViewport = () => {
