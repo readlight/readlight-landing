@@ -1,7 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = { path: string };
+interface IProps {
+  path: string;
+}
 
 const ScreenImage = styled.img`
   position: absolute;
@@ -16,6 +18,6 @@ const ScreenImage = styled.img`
   }
 `;
 
-const MockupDeviceWrapper = ({ path }: Props) => <ScreenImage src={path} />;
+const MockupDeviceWrapper = ({ path }: IProps) => <ScreenImage src={path} />;
 
 export default MockupDeviceWrapper;

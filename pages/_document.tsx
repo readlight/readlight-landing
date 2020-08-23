@@ -7,11 +7,11 @@ import Document, {
   DocumentContext,
 } from 'next/document';
 
-type DocumentProps = {
+interface IDocumentProps {
   styleTags: Array<React.ReactElement<{}>>;
-};
+}
 
-export default class CustomDocument extends Document<DocumentProps> {
+export default class CustomDocument extends Document<IDocumentProps> {
   static async getInitialProps({ renderPage }: DocumentContext) {
     const sheet = new ServerStyleSheet();
 

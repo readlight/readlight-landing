@@ -1,9 +1,14 @@
+import * as React from 'react';
 import ActiveHeader from '../atom/ActiveHeader';
 import ActiveSubHeader from '../atom/ActiveSubHeader';
 
-type Props = { children: React.ReactNode; subText: string; isActive: boolean };
+interface IProps {
+  children: React.ReactNode;
+  subText: string;
+  isActive: boolean;
+}
 
-const ActiveHeaderBox: React.FC<Props> = ({ children, subText, isActive }) => {
+const ActiveHeaderBox = ({ children, subText, isActive }: IProps) => {
   return (
     <div>
       <ActiveSubHeader isActive={isActive}>{subText}</ActiveSubHeader>

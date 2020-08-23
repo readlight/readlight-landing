@@ -1,7 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = { iconPath: string };
+interface IProps {
+  iconPath: string;
+}
 
 const IconSvg = styled.img`
   height: 50px;
@@ -15,7 +17,7 @@ const IconSvg = styled.img`
   }
 `;
 
-const IconWrapper: React.FC<Props> = ({ iconPath }) => {
+const IconWrapper = ({ iconPath }: IProps) => {
   return <IconSvg src={iconPath} alt="npmlogo" />;
 };
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = {
+interface IProps {
   children: React.ReactNode;
-};
+}
 
 const WidthAdjustStyle = styled.div`
   max-width: 1024px;
@@ -21,7 +21,7 @@ const WidthAdjustStyle = styled.div`
   }
 `;
 
-const WidthAdjust = ({ children }: Props) => (
+const WidthAdjust = ({ children }: IProps) => (
   <WidthAdjustStyle>{children}</WidthAdjustStyle>
 );
 

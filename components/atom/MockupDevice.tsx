@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = {};
-
 const Device = styled.img`
   width: 526px;
   height: 789px;
@@ -15,6 +13,6 @@ const Device = styled.img`
   }
 `;
 
-const MockupDevice = ({}: Props) => <Device src="/device.png" />;
+const MockupDevice = () => <Device src="/device.png" />;
 
 export default MockupDevice;

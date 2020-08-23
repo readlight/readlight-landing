@@ -1,9 +1,9 @@
+import * as React from 'react';
 import { NextPage, NextPageContext } from 'next';
 import Layout from '../components/template/Layout';
 import WidthAdjust from '../components/template/WidthAdjust';
 import ContentBox from '../components/template/ContentBox';
 import NavbarWrapper from '../components/template/NavbarWrapper';
-import Navbar from '../components/organism/Navbar';
 import ImageWrapper from '../components/template/ImageWrapper';
 import MoreFeatureBox from '../components/template/MoreFeatureBox';
 import DailyFeed from '../components/template/DailyFeed';
@@ -27,7 +27,11 @@ const Index: NextPage<IProps> = ({ isMobile }) => {
     <div className="container">
       <ImageWrapper desktopHeight={'100vh'} mobileHeight={'98vh'}>
         <NavbarWrapper isMobile={isMobile} />
-        <MainBannerContent isMobile={isMobile} />
+        <MainBannerContent
+          isMobile={isMobile}
+          firstLine={'택배로 빌리는 무제한 종이책'}
+          secondLine={'리드라이트'}
+        />
       </ImageWrapper>
 
       <Layout

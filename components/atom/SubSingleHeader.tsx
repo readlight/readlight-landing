@@ -3,10 +3,18 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import ScrollTrigger from 'react-scroll-trigger';
 
-type Props = { subText: String; textAlign: String };
+interface IProps {
+  subText: string;
+  textAlign: string;
+}
+
+interface ISubSingleHeaderStyle {
+  textAlign: string;
+  visible: boolean;
+}
 
 const SubSingleHeaderStyle = styled.h2`
-  text-align: ${(props) => props.textAlign};
+  text-align: ${(props: ISubSingleHeaderStyle) => props.textAlign};
   color: ${({ theme }) => theme.colors.subHeader};
 
   opacity: ${(props) => (props.visible ? '1' : '0.3')};
@@ -29,7 +37,7 @@ const SubSingleHeaderStyle = styled.h2`
 
 const ScrollTriggerWrapper: any = ScrollTrigger;
 
-const DoubleLineHeader: React.FC<Props> = ({ subText, textAlign }) => {
+const SubSingleHeader = ({ subText, textAlign }: IProps) => {
   const [visible, setVisible] = useState(false);
 
   const onEnterViewport = () => {
@@ -49,4 +57,4 @@ const DoubleLineHeader: React.FC<Props> = ({ subText, textAlign }) => {
   );
 };
 
-export default DoubleLineHeader;
+export default SubSingleHeader;

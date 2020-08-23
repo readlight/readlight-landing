@@ -1,7 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = { text: String };
+interface IProps {
+  text: string;
+}
 
 const InlineHeader = styled.h3`
   color: ${({ theme }) => theme.colors.pureBlack};
@@ -9,7 +11,7 @@ const InlineHeader = styled.h3`
   @media (max-width: 768px) {
   }
 `;
-const SmallHeader: React.FC<Props> = ({ text }) => {
+const SmallHeader = ({ text }: IProps) => {
   return <InlineHeader>{text}</InlineHeader>;
 };
 

@@ -1,15 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = { children: React.ReactNode; isActive: boolean };
-
-type DoubleLineHeaderStyle = {
+interface IProps {
+  children: React.ReactNode;
   isActive: boolean;
-};
+}
 
 const DoubleLineHeaderStyle = styled.h1`
   color: ${({ theme }) => theme.colors.header};
-  opacity: ${(props) => (props.isActive ? '1' : '0.3')};
+  opacity: ${(props: IProps) => (props.isActive ? '1' : '0.3')};
   transition: color 230ms ease-out, opacity 230ms ease-out;
   user-select: none;
 
@@ -17,7 +16,7 @@ const DoubleLineHeaderStyle = styled.h1`
   }
 `;
 
-const ActiveHeader: React.FC<Props> = ({ children, isActive }) => {
+const ActiveHeader = ({ children, isActive }: IProps) => {
   return (
     <DoubleLineHeaderStyle isActive={isActive}>
       {children}

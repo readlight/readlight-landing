@@ -7,7 +7,15 @@ import NavTextButton from '../atom/NavTextButton';
 import LargeActionButton from '../atom/LargeActionButton';
 import LinkToNotion from '../atom/LinkToNotion';
 
-type Props = { isMobile: boolean; changeClicked: () => void };
+interface IProps {
+  isMobile: boolean;
+  changeClicked: () => void;
+}
+
+interface IReactiveNav {
+  isClicked: boolean;
+  scrollPosition: number;
+}
 
 const NavbarContentWrapper = styled.div`
   position: relative;
@@ -36,7 +44,8 @@ const ReactiveNav = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  background-color: ${(props) => (props.isClicked ? 'white' : 'transparent')};
+  background-color: ${(props: IReactiveNav) =>
+    props.isClicked ? 'white' : 'transparent'};
   opacity: ${(props) => (props.isClicked ? '1.0' : '0')};
   transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out;
   padding: 0 20px;
@@ -46,7 +55,7 @@ const ReactiveNav = styled.div`
   align-items: center;
 `;
 
-const Navbar: React.FC<Props> = ({ isMobile, changeClicked }) => {
+const Navbar = ({ isMobile, changeClicked }: IProps) => {
   const { scrollPosition, scrollDirection } = useScrollEvent();
   const [isClicked, setIsClicked] = useState(false);
 
@@ -68,11 +77,7 @@ const Navbar: React.FC<Props> = ({ isMobile, changeClicked }) => {
               }}
             />
           ) : (
-            <NavButtonList
-              scrollPosition={scrollPosition}
-              isMobile={isMobile}
-              isScrolled={scrollPosition > 2}
-            />
+            <NavButtonList isScrolled={scrollPosition > 2} />
           )}
         </FlexWrapper>
       </NavbarContentWrapper>
@@ -85,10 +90,7 @@ const Navbar: React.FC<Props> = ({ isMobile, changeClicked }) => {
             targetPath={'/faq'}
             isScrolled={true}
           />
-          <LargeActionButton
-            buttonText={'펀딩하기'}
-            scrollPosition={scrollPosition}
-          />
+          <LargeActionButton buttonText={'펀딩하기'} />
         </ReactiveNav>
       )}
     </>

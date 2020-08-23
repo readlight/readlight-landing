@@ -1,11 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = { children: React.ReactNode; isActive: boolean };
+interface IProps {
+  children: React.ReactNode;
+  isActive: boolean;
+}
 
 const SubSingleHeaderStyle = styled.h2`
   color: ${({ theme }) => theme.colors.subHeader};
-  opacity: ${(props) => (props.isActive ? '1' : '0.3')};
+  opacity: ${(props: IProps) => (props.isActive ? '1' : '0.3')};
   transition: opcaity 230ms ease-out;
   user-select: none;
 
@@ -13,7 +16,7 @@ const SubSingleHeaderStyle = styled.h2`
   }
 `;
 
-const ActiveSubHeader: React.FC<Props> = ({ children, isActive }) => {
+const ActiveSubHeader = ({ children, isActive }: IProps) => {
   return (
     <SubSingleHeaderStyle isActive={isActive}>{children}</SubSingleHeaderStyle>
   );

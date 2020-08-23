@@ -2,7 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-type Props = { targetPath: string };
+interface IProps {
+  targetPath: string;
+}
 
 const LogoButtonClickArea = styled.div`
   float: left;
@@ -17,7 +19,7 @@ const LogoSvg = styled.img`
   }
 `;
 
-const LogoButton: React.FC<Props> = ({ targetPath }) => {
+const LogoButton = ({ targetPath }: IProps) => {
   return (
     <LogoButtonClickArea>
       <Link href={targetPath}>

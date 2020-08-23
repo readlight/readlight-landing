@@ -1,3 +1,4 @@
+import * as React from 'react';
 import styled from 'styled-components';
 import ActiveHeader from '../atom/ActiveHeader';
 import WidthAdjust from '../template/WidthAdjust';

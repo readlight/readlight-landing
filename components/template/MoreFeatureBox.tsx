@@ -1,9 +1,8 @@
+import * as React from 'react';
 import MoreFeature from '../organism/MoreFeature';
 import styled from 'styled-components';
 import SingleLineHeader from '../atom/SingleLineHeader';
 import SubSingleHeader from '../atom/SubSingleHeader';
-
-type Props = {};
 
 const FeatureList = styled.div`
   display: flex;
@@ -18,7 +17,7 @@ const FeatureList = styled.div`
   }
 `;
 
-const MoreFeatureBox: React.FC<Props> = () => {
+const MoreFeatureBox = () => {
   return (
     <div>
       <div>
