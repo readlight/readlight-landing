@@ -19,8 +19,8 @@ const ButtonClickArea = styled.div`
 `;
 
 const NavText = styled.span`
-  color: ${(props: INavText) => (props.isScrolled ? 'black' : 'white')};
-  font-size: 16px;
+  color: ${(props: INavText) => (props.isScrolled ? 'black' : '#808080')};
+  font-size: 18px;
   font-weight: normal;
   padding: 10px 6px;
   margin: 0 12px;
