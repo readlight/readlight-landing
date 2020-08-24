@@ -29,12 +29,13 @@ const ContentArea = styled.div`
   }
 `;
 
+const textData = {
+  'bookoftoday' : '하루 한권, 인공지능이 당신의 독서 취향을 분석해 책을 추천해줍니다.',
+  'collection' : '리드라이트 큐레이터들이 최근의 이슈나 트렌드에 맞는 책들을 엄선해 제공합니다.',
+  'readerspick' : '독서 결정에 도움을 줄수 있도록 큐레이터가 책을 읽고 작성한 칼럼을 제공합니다.',
+};
+
 const DailyFeed = ({ isMobile }: IProps) => {
-  const imagePathList = [
-    '/mobile-bookoftoday.png',
-    '/mobile-collection.png',
-    '/mobile-readerspick.png',
-  ];
   const { feature, featureBooleanList, changeFeature } = useFeature();
 
   return (
@@ -49,7 +50,7 @@ const DailyFeed = ({ isMobile }: IProps) => {
         </div>
       )}
       <MockupDeviceWrapper
-        imagePath={imagePathList[feature]}
+        imagePath={`/mobile-${feature}.png`}
         left={'-50px'}
         right={'none'}
       />
@@ -62,11 +63,10 @@ const DailyFeed = ({ isMobile }: IProps) => {
           />
         )}
         <FeatureChange
-          feature={feature}
           featureBooleanList={featureBooleanList}
           changeFeature={changeFeature}
         />
-        <ChangeableText feature={feature} />
+        <ChangeableText textData={textData[feature]} />
       </ContentArea>
     </DaliyFeedWrapper>
   );

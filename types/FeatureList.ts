@@ -1,5 +1,5 @@
 export enum FeatureList {
-  BOOKOFTODAY,
-  COLLECTION,
-  READERSPICK,
+  BOOKOFTODAY = 'bookoftoday',
+  COLLECTION = 'collection',
+  READERSPICK = 'readerspick',
 }
