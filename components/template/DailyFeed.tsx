@@ -29,6 +29,15 @@ const ContentArea = styled.div`
   }
 `;
 
+const TextWrapper = styled.div`
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
 const textData = {
   bookoftoday:
     '하루 한권, 인공지능이 당신의 독서 취향을 분석해 책을 추천해줍니다.',
@@ -69,7 +78,9 @@ const DailyFeed = ({ isMobile }: IProps) => {
           featureBooleanList={featureBooleanList}
           changeFeature={changeFeature}
         />
-        <SmallText>{textData[feature]}</SmallText>
+        <TextWrapper>
+          <SmallText>{textData[feature]}</SmallText>
+        </TextWrapper>
       </ContentArea>
     </DaliyFeedWrapper>
   );
