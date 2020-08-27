@@ -2,9 +2,9 @@ import * as React from 'react';
 import ContentHeader from '../molecule/ContentHeader';
 import FeatureChange from '../molecule/FeatureChange';
 import styled from 'styled-components';
-import ChangeableText from '../atom/ChangeableText';
 import useFeature from '../../utils/useFeature';
 import MockupDeviceWrapper from '../organism/MockupWrapper';
+import SmallText from '../atom/SmallText';
 
 interface IProps {
   isMobile: boolean;
@@ -29,12 +29,25 @@ const ContentArea = styled.div`
   }
 `;
 
+const TextWrapper = styled.div`
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
+const textData = {
+  bookoftoday:
+    '하루 한권, 인공지능이 당신의 독서 취향을 분석해 책을 추천해줍니다.',
+  collection:
+    '리드라이트 큐레이터들이 최근의 이슈나 트렌드에 맞는 책들을 엄선해 제공합니다.',
+  readerspick:
+    '독서 결정에 도움을 줄수 있도록 큐레이터가 책을 읽고 작성한 칼럼을 제공합니다.',
+};
+
 const DailyFeed = ({ isMobile }: IProps) => {
-  const imagePathList = [
-    '/mobile-bookoftoday.png',
-    '/mobile-collection.png',
-    '/mobile-readerspick.png',
-  ];
   const { feature, featureBooleanList, changeFeature } = useFeature();
 
   return (
@@ -49,7 +62,7 @@ const DailyFeed = ({ isMobile }: IProps) => {
         </div>
       )}
       <MockupDeviceWrapper
-        imagePath={imagePathList[feature]}
+        imagePath={`/mobile-${feature}.png`}
         left={'-50px'}
         right={'none'}
       />
@@ -62,11 +75,12 @@ const DailyFeed = ({ isMobile }: IProps) => {
           />
         )}
         <FeatureChange
-          feature={feature}
           featureBooleanList={featureBooleanList}
           changeFeature={changeFeature}
         />
-        <ChangeableText feature={feature} />
+        <TextWrapper>
+          <SmallText>{textData[feature]}</SmallText>
+        </TextWrapper>
       </ContentArea>
     </DaliyFeedWrapper>
   );

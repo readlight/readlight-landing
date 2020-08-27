@@ -1,5 +1,5 @@
 export enum ScrollDirection {
-  UP,
-  STOP,
-  DOWN,
+  UP = 'up',
+  STOP = 'stop',
+  DOWN = 'down',
 }

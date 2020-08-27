@@ -3,11 +3,15 @@ import { FeatureList } from '../types/FeatureList';
 
 export default function useFeature(): {
   feature: FeatureList;
-  featureBooleanList: boolean[];
+  featureBooleanList: object;
   changeFeature: (featureType: FeatureList) => void;
 } {
   function updateFeature(featureType) {
-    let newBooleanList = [false, false, false];
+    let newBooleanList = {
+      'bookoftoday' : false,
+      'collection' : false,
+      'readerspick' : false
+    };
     newBooleanList[featureType] = true;
     const newState = {
       feature: featureType,

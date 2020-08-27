@@ -11,6 +11,7 @@ const InlineText = styled.span`
   @media (max-width: 768px) {
   }
 `;
+
 const SmallText = ({ children }: IProps) => {
   return <InlineText>{children}</InlineText>;
 };
