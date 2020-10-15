@@ -12,7 +12,7 @@
     "babel-plugin-inline-react-svg": "^1.1.1",
     "mobile-detect": "^1.4.4",
     "next": "9.5.5",
-    "react": "16.13.1",
+    "react": "16.14.0",
     "react-device-detect": "^1.14.0",
     "react-dom": "16.13.1",
     "react-scroll-trigger": "^0.6.9",
