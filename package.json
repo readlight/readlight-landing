@@ -15,7 +15,7 @@
     "react": "16.13.1",
     "react-device-detect": "^1.14.0",
     "react-dom": "16.13.1",
-    "react-scroll-trigger": "^0.6.9",
+    "react-scroll-trigger": "^0.6.10",
     "sass": "^1.27.0"
   },
   "devDependencies": {
